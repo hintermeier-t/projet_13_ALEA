@@ -18,5 +18,11 @@ env: DJANGO_SETTINGS_MODULE=alea.settings.travis
 script:
   - python manage.py test
 
-after_success:
-  -sh push.sh
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $github_token  # Your GitHub token set in Travis CI console
+  target_branch: master        # Add this line - To push into GitHub master branch
+  on:
+    branch: staging 
