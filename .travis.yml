@@ -22,7 +22,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   keep_history: true
-  github_token: $github_token  # Your GitHub token set in Travis CI console
-  target_branch: master        # Add this line - To push into GitHub master branch
+  github_token: $GITTOKEN
+  target_branch: master
   on:
     branch: staging 
