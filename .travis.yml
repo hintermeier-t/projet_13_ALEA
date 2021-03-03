@@ -13,7 +13,7 @@ before_script:
 services:
   - postgresql
 
-env: DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
+env: DJANGO_SETTINGS_MODULE=alea.settings.travis
 
 script:
   - ./manage.py test
