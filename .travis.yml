@@ -16,7 +16,7 @@ services:
 env: DJANGO_SETTINGS_MODULE=alea.settings.travis
 
 script:
-  - ./manage.py test
+  - python manage.py test
 
 after_success:
-  -git push origin master
+  -sh push.sh
