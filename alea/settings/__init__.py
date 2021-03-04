@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "debug_toolbar",
+    "authentication",
+    "management",
+    "news",
+    "communication",
+    "schedule",
 ]
 
 MIDDLEWARE = [
@@ -78,7 +84,7 @@ WSGI_APPLICATION = 'alea.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",  # on utilise l'adaptateur postgresql
+        "ENGINE": "django.db.backends.postgresql_psycopg2",  # on utilise l'adaptateur postgresql
         "NAME": "alea",  # le nom de notre base de donnees creee precedemment
         "USER": "thomas",  # attention : remplacez par votre nom d'utilisateur
         "PASSWORD": "2s7gix9u",
@@ -132,6 +138,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "staticfiles")
+STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, "static"),)
 LOGOUT_REDIRECT_URL = "index"
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 SESSION_COOKIE_AGE = 60 * 15

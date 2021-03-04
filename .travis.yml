@@ -1,0 +1,29 @@
+language: python
+python:
+  - '3.8'
+
+# safelist
+branches:
+  only:
+    - staging
+    - master
+
+before_script:
+  - pip install -r requirements.txt
+
+services:
+  - postgresql
+
+env: DJANGO_SETTINGS_MODULE=alea.settings.travis
+
+script:
+  - python manage.py test
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $TRAVISTOKEN
+  on:
+    branch: staging
+  target_branch: master 
