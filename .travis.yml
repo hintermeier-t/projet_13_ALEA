@@ -25,4 +25,5 @@ deploy:
   keep_history: true
   github_token: $TRAVISTOKEN
   on:
-    branch: master 
+    branch: staging
+  target_branch: master 
