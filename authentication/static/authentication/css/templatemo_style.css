@@ -773,3 +773,12 @@ and (max-device-width : 1024px) {
 	#slider-direction-nav,
 	#slider-control-nav { opacity: 1; }
 }
+
+
+
+/* CUSTOMS STYLES */
+.td a
+{
+    display:block;
+    text-decoration:none;
+}

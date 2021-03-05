@@ -72,13 +72,11 @@ ddsmoothmenu.init({
             <nav class="mainMenu">
               <ul class="nav">
                 {% if user.is_authenticated %}
-                <li><a class="menu" href="#templatemo_home">Tableau de Bord</a></li>
-                <li><a class="menu" href="#templatemo_about">Planning</a></li>
-                <li><a class="menu" href="#templatemo_portfolio">Parcelles</a></li>
-                <li><a class="menu" href="#templatemo_blog">Chat Interne</a></li>
-                <li><a class="menu" href="#templatemo_contact">Compte</a></li>
+                <li><a class="menu" href="#{% url 'dashboard' %}">Tableau de Bord</a></li>
+                
+                <li><a class="menu" href="{% url 'authentication:logout' %}">Se Déconnecter</a></li>
                 {% else %}
-                <li><a class="menu" href="#contact">Se Connecter</a></li>
+                <li><a class="menu" href="{% url 'authentication:login' %}">Se Connecter</a></li>
                 {% endif %}
               </ul>
             </nav>
