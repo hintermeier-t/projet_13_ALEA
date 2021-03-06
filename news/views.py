@@ -4,8 +4,8 @@ import feedparser
 import requests
 
 from . import rss
-# Create your views here.
-def rss_reader(request):
+
+def rss_reader():
     entries = []
     news_feed = feedparser.parse(
         "https://chambres-agriculture.fr/flux-rss/flux-rss-actualite/flux.rss"
@@ -25,5 +25,4 @@ def rss_reader(request):
                 img
             )
         )
-    context = {"entries": entries}
     return entries

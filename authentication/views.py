@@ -22,7 +22,8 @@ def login_view(request):
     Renders signin page if not logged in, with error if invalid.
 
     """
-
+    form = AuthenticationForm()
+    
     if request.user.is_authenticated:
         return redirect("dashboard")
 
@@ -31,11 +32,9 @@ def login_view(request):
         username=request.POST["username"],
         password=request.POST["password"]
         )
-        login(request, user)
-        return redirect("dashboard")
-
-    else:
-        form = AuthenticationForm()
+        if user is not None:
+            login(request, user)
+            return redirect("dashboard")  
 
     return render(request, "authentication/login.html", {"form": form})
 
@@ -46,6 +45,6 @@ def logout_view(request):
         
 @login_required
 def dashboard(request):
-    entries = rss_reader(request)
+    entries = rss_reader()
     context = {"entries":entries}
     return render(request, "authentication/dashboard.html", context)
