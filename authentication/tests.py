@@ -65,24 +65,7 @@ class LoginLogoutTestCase(TestCase):
         User.objects.create_user(
             username = self.username, password = self.password
         )
-        self.driver = webdriver.Firefox(
-            executable_path=GeckoDriverManager().install()
-            )
-    def selenium(self, s_username, s_password):
-        self.driver.get("http://127.0.0.1:8000/authentication/login/")
-        username = self.driver.find_element_by_name("username")
-        password = self.driver.find_element_by_name("password")
-        button = self.driver.find_element_by_name("submit")
-        username.send_keys(s_username)
-        password.send_keys(s_password)
-        button.click()
-        cookies = self.driver.get_cookies()
-        print(test)
-        for cookie in cookies:
-            print (cookie)
-            if cookie["name"] == "sessionid":
-                return True
-        return False
+        
 
     # - test login view with invalid credentials
     def test_login_invalid_credentials(self):
@@ -102,7 +85,6 @@ class LoginLogoutTestCase(TestCase):
         )
         self.assertEqual(request.status_code, 200)
         self.assertFalse(request.context["user"].is_authenticated)
-        self.assertFalse(self.selenium(self.username, "ImInLoveWithMyCar"))
         
     # - test login view with valid credentials
     def test_login_valid_credentials(self):
@@ -122,7 +104,6 @@ class LoginLogoutTestCase(TestCase):
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/dashboard/")
-        self.assertTrue(self.selenium(self.username, self.password))
     
     
 
@@ -142,11 +123,3 @@ class LoginLogoutTestCase(TestCase):
         request = self.client.get(reverse("authentication:logout"))
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/")
-        
-
-
-    def tearDown(self):
-        """
-        Closing the driver after tests.
-        """
-        self.driver.quit()
