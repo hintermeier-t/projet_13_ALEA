@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <th>Dernières Nouvelles</th>
+        </tr>
+    </thead>
+    {% for entry in entries %}
+
+    <tr>
+        
+            <tr>
+                <td rowspan=2>
+                    <a href="{{entry.url}}"><img src="{{entry.thumbnail_url}}" style="max-width: 75px;"></a>
+                    <td style="font-weight: bold;"><a href="{{entry.url}}">{{entry.title}}</a></td>
+                </td>
+                    <tr>
+                        <td><a href="{{entry.url}}">{{entry.summary}}</a></td>
+                    </tr>
+                </td>
+            </tr>
+        </a>
+        <tr>
+            <td colspan=2 style="font-size: x-small;">{{entry.date}}</td>
+        </tr>
+    </tr>
+
+    {% endfor %}
+</table>

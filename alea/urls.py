@@ -17,10 +17,22 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from authentication import views
+from authentication import views as auth
 
 urlpatterns = [
+    #Admin Site: only for Dev
     path('backoffice/', admin.site.urls),
-    path("", views.index, name="index"),
+    #Authentication app
     path("authentication/", include("authentication.urls", namespace="authentication")),
+    path("", auth.index, name="index"),
+    path("dashboard/", auth.dashboard, name="dashboard"),
+    #Management app
+    path("management/", include("management.urls", namespace="management")),
+    #Schedule app
+    path("schedule/", include("schedule.urls", namespace="schedule")),
+    #Communication app
+    path("communication/", include("communication.urls", namespace="communication")),
+    #News App
+    path("news/", include("news.urls", namespace="news")),
+    
 ]

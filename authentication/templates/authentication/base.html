@@ -57,7 +57,7 @@ ddsmoothmenu.init({
   </head>
   <body>
     <header>
-    <!-- start menu -->
+    <!-- Menu -->
     <div id="templatemo_home">
     	<div class="templatemo_top">
       <div class="container templatemo_container">
@@ -72,13 +72,11 @@ ddsmoothmenu.init({
             <nav class="mainMenu">
               <ul class="nav">
                 {% if user.is_authenticated %}
-                <li><a class="menu" href="#templatemo_home">Tableau de Bord</a></li>
-                <li><a class="menu" href="#templatemo_about">Planning</a></li>
-                <li><a class="menu" href="#templatemo_portfolio">Parcelles</a></li>
-                <li><a class="menu" href="#templatemo_blog">Chat Interne</a></li>
-                <li><a class="menu" href="#templatemo_contact">Compte</a></li>
+                <li><a class="menu" href="#{% url 'dashboard' %}">Tableau de Bord</a></li>
+                
+                <li><a class="menu" href="{% url 'authentication:logout' %}">Se Déconnecter</a></li>
                 {% else %}
-                <li><a class="menu" href="#contact">Se Connecter</a></li>
+                <li><a class="menu" href="{% url 'authentication:login' %}">Se Connecter</a></li>
                 {% endif %}
               </ul>
             </nav>
@@ -92,7 +90,7 @@ ddsmoothmenu.init({
     <div class="clear"></div>
     <!-- end menu -->
     {% block content %}{% endblock %}
-    <!--Footer Start-->
+    <!--Footer-->
     <div class="templatemo_footer">
     	<div class="container">
        	  <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
@@ -134,8 +132,8 @@ ddsmoothmenu.init({
             </div>
         </div>
     </div>
-   <!--Footer End-->
-	<!-- Bottom Start -->
+   <!--End Footer-->
+	<!-- Bottom -->
     <div class="templatemo_bottom">
     	<div class="container">
         	<div class="row">
@@ -154,16 +152,16 @@ ddsmoothmenu.init({
             </div>
         </div>
     </div>
-    <!-- Bottom End -->
+    <!--End Bottom-->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.cycle2.min.js"></script>
-    <script src="js/jquery.cycle2.carousel.min.js"></script>
-    <script src="js/jquery.nivo.slider.pack.js"></script>
+    <script src="{% static 'authentication/js/jquery-1.10.2.min.js'%}"></script>
+    <script src="{% static 'authentication/js/jquery.cookie.js'%}"></script>
+    <script src="{% static 'authentication/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'authentication/js/jquery.cycle2.min.js'%}"></script>
+    <script src="{% static 'authentication/js/jquery.cycle2.carousel.min.js'%}"></script>
+    <script src="{% static 'authentication/js/jquery.nivo.slider.pack.js'%}"></script>
     <script>$.fn.cycle.defaults.autoSelector = '.slideshow';</script>
     <script type="text/javascript">
       $(function(){
@@ -233,7 +231,7 @@ ddsmoothmenu.init({
           });
       });
     </script>
-	<script src="js/jquery.singlePageNav.js"></script>
+	<script src="{% static 'authentication/js/jquery.singlePageNav.js' %}"></script>
 	
     <script type="text/javascript">
     $(window).load(function() {
@@ -303,7 +301,7 @@ ddsmoothmenu.init({
         });
       });
       </script>
-      <script src="js/stickUp.min.js" type="text/javascript"></script>
+      <script src="{% static 'authentication/js/stickUp.min.js'%}" type="text/javascript"></script>
       <script type="text/javascript">
         //initiating jQuery
         jQuery(function($) {
