@@ -1,8 +1,23 @@
 {% extends 'authentication/base.html' %}
 
 {% block content %}
+{% load static %}
 <div class="clear"></div>
 <div class="clear height20"></div>
+<div  id="slider"  class="nivoSlider templatemo_slider">
+    <a href="#"><img src="{% static 'authentication/images/portfolio/dashboard.png' %}" alt="Tableau de Bord" /></a>
+    <a href="#"><img src="{% static 'authentication/images/portfolio/management.png' %}" alt="Panneau de gestion" /></a>           		        	
+
+</div>
+     <div class="templatemo_caption">
+            <div class="templatemo_slidetitle">Gérez votre exploitation sur une seule plateforme </div>
+            <div class="clear"></div>
+            <h1>Application Logistique pour Exploitation Agricole</h1>
+            <div class="clear"></div>
+             <p>De la gestion des effectifs aux dernières nouvelles en passant par la météo, retrouvez tout ce dont vous avez besoin de manière centralisée.<br/>
+                Faites un tour, et décrivez-nous vos besoin. Cette application s'adapte à vos besoin !</p>
+              <a class="btn btn-large btn-primary" href="#">En savoir plus</a>
+      </div> 
 <!-- About Zone-->
 <div class="templatemo_lightgrey_about" id="templatemo_about">
 	<div class="container">

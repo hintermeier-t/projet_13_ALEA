@@ -8,54 +8,69 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auth', '0012_alter_user_first_name_max_length'),
-        ('management', '0001_initial'),
+        ("auth", "0012_alter_user_first_name_max_length"),
+        ("management", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Employee',
+            name="Employee",
             fields=[
-                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='auth.user')),
-                ('phone_number', models.CharField(max_length=10, verbose_name='Téléphone')),
-                ('address', models.CharField(max_length=200, verbose_name='Adresse')),
+                (
+                    "user_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="auth.user",
+                    ),
+                ),
+                (
+                    "phone_number",
+                    models.CharField(max_length=10, verbose_name="Téléphone"),
+                ),
+                ("address", models.CharField(max_length=200, verbose_name="Adresse")),
             ],
             options={
-                'verbose_name': 'Employé',
+                "verbose_name": "Employé",
             },
-            bases=('auth.user',),
+            bases=("auth.user",),
             managers=[
-                ('objects', django.contrib.auth.models.UserManager()),
+                ("objects", django.contrib.auth.models.UserManager()),
             ],
         ),
         migrations.AlterField(
-            model_name='plot',
-            name='area',
-            field=models.CharField(max_length=20, verbose_name='Etendue'),
+            model_name="plot",
+            name="area",
+            field=models.CharField(max_length=20, verbose_name="Etendue"),
         ),
         migrations.AlterField(
-            model_name='plot',
-            name='comment',
-            field=models.CharField(max_length=500, null=True, verbose_name='Commentaire'),
+            model_name="plot",
+            name="comment",
+            field=models.CharField(
+                max_length=500, null=True, verbose_name="Commentaire"
+            ),
         ),
         migrations.AlterField(
-            model_name='plot',
-            name='plowed',
-            field=models.BooleanField(verbose_name='Labourée'),
+            model_name="plot",
+            name="plowed",
+            field=models.BooleanField(verbose_name="Labourée"),
         ),
         migrations.AlterField(
-            model_name='plot',
-            name='sulphated',
-            field=models.BooleanField(verbose_name='Traitée'),
+            model_name="plot",
+            name="sulphated",
+            field=models.BooleanField(verbose_name="Traitée"),
         ),
         migrations.AlterField(
-            model_name='plot',
-            name='variety',
-            field=models.CharField(max_length=50, verbose_name='Variété'),
+            model_name="plot",
+            name="variety",
+            field=models.CharField(max_length=50, verbose_name="Variété"),
         ),
         migrations.AlterField(
-            model_name='plot',
-            name='watered',
-            field=models.BooleanField(verbose_name='Arrosée'),
+            model_name="plot",
+            name="watered",
+            field=models.BooleanField(verbose_name="Arrosée"),
         ),
     ]

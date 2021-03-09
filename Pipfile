@@ -12,6 +12,7 @@ django-debug-toolbar = "*"
 selenium = "*"
 webdriver-manager = "*"
 feedparser = "*"
+coverage = "*"
 
 [dev-packages]
 

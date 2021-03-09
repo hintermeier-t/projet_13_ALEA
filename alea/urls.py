@@ -20,19 +20,18 @@ from django.urls import path, include
 from authentication import views as auth
 
 urlpatterns = [
-    #Admin Site: only for Dev
-    path('backoffice/', admin.site.urls),
-    #Authentication app
+    # Admin Site: only for Dev
+    path("backoffice/", admin.site.urls),
+    # Authentication app
     path("authentication/", include("authentication.urls", namespace="authentication")),
     path("", auth.index, name="index"),
     path("dashboard/", auth.dashboard, name="dashboard"),
-    #Management app
+    # Management app
     path("management/", include("management.urls", namespace="management")),
-    #Schedule app
+    # Schedule app
     path("schedule/", include("schedule.urls", namespace="schedule")),
-    #Communication app
+    # Communication app
     path("communication/", include("communication.urls", namespace="communication")),
-    #News App
+    # News App
     path("news/", include("news.urls", namespace="news")),
-    
 ]
