@@ -142,6 +142,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "staticfiles")
 STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, "static"),)
 LOGOUT_REDIRECT_URL = "index"
+LOGIN_URL = "authentication:login"
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 SESSION_COOKIE_AGE = 60 * 15
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True

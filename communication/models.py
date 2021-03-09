@@ -1,5 +1,5 @@
 from django.db import models
-from authentication.models import Employee
+from management.models import Employee
 
 # Create your models here.
 class Message (models.Model):
