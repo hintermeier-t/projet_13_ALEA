@@ -3,7 +3,6 @@ from django.urls import path, include
 
 from . import views
 
-urlpatterns = [
-]
+urlpatterns = []
 
 app_name = "schedule"

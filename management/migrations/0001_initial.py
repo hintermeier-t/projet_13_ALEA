@@ -7,23 +7,30 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Plot',
+            name="Plot",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('variety', models.CharField(max_length=50)),
-                ('area', models.CharField(max_length=20)),
-                ('comment', models.CharField(max_length=500, null=True)),
-                ('plowed', models.BooleanField()),
-                ('watered', models.BooleanField()),
-                ('sulphated', models.BooleanField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("variety", models.CharField(max_length=50)),
+                ("area", models.CharField(max_length=20)),
+                ("comment", models.CharField(max_length=500, null=True)),
+                ("plowed", models.BooleanField()),
+                ("watered", models.BooleanField()),
+                ("sulphated", models.BooleanField()),
             ],
             options={
-                'verbose_name': 'Parcelle',
+                "verbose_name": "Parcelle",
             },
         ),
     ]

@@ -3,7 +3,9 @@ from django.urls import reverse
 
 from . import rss
 from .views import rss_reader
+
 # Create your tests here.
+
 
 class RssReaderPageTestCase(TestCase):
     def test_rssreader_page(self):
@@ -21,4 +23,3 @@ class RssReaderPageTestCase(TestCase):
         self.assertEqual(len(entries), 5)
         for entry in entries:
             self.assertTrue(isinstance(entry, rss.FeedEntry))
-        

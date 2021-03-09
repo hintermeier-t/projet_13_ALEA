@@ -33,10 +33,11 @@ class IndexPageTestCase(TestCase):
         request = self.client.get(reverse("index"))
         self.assertEqual(request.status_code, 200)
 
+
 class LoginLogoutTestCase(TestCase):
     """
     Testing login and logout views.
-    
+
     Attributes (setUp method) :
     ---------------------------
     :self.username (string): username field used to connect and create User
@@ -54,7 +55,7 @@ class LoginLogoutTestCase(TestCase):
         credentials.
     :test_logout(self): Request a Logout from the app
     """
-    
+
     def setUp(self):
         """
         Tests setup
@@ -62,11 +63,7 @@ class LoginLogoutTestCase(TestCase):
 
         self.username = "mercuryf"
         self.password = "BohemianRhapsody"
-        User.objects.create_user(
-            username = self.username,
-            password = self.password
-        )
-        
+        User.objects.create_user(username=self.username, password=self.password)
 
     # - test login view with invalid credentials
     def test_login_invalid_credentials(self):
@@ -82,14 +79,11 @@ class LoginLogoutTestCase(TestCase):
         """
         request = self.client.post(
             reverse("authentication:login"),
-            {
-                "username": self.username,
-                "password": "ImInLoveWithMyCar"
-            },
+            {"username": self.username, "password": "ImInLoveWithMyCar"},
         )
         self.assertEqual(request.status_code, 200)
         self.assertFalse(request.context["user"].is_authenticated)
-        
+
     # - test login view with valid credentials
     def test_login_valid_credentials(self):
         """
@@ -104,15 +98,10 @@ class LoginLogoutTestCase(TestCase):
         """
         request = self.client.post(
             reverse("authentication:login"),
-            {
-                "username": self.username,
-                "password": self.password
-            },
+            {"username": self.username, "password": self.password},
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/dashboard/")
-    
-    
 
     # - Test logout view
     def test_logout(self):
@@ -126,10 +115,7 @@ class LoginLogoutTestCase(TestCase):
         *Status code = 302 (redirection)
         *Redirect page = index (after logout)
         """
-        self.client.login(
-            username=self.username,
-            password=self.password
-            )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.get(reverse("authentication:logout"))
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/")
