@@ -1,31 +1,45 @@
 {% extends 'authentication/base.html' %}
 
 {% block content %}
-<table id="rss_feed">
-    <thead>
-        <tr>
-            <th>Dernières Nouvelles</th>
-        </tr>
-    </thead>
-    {% for entry in entries %}
 
-    <tbody>
-            <tr>
-                <td rowspan=2>
-                    <a href="{{entry.url}}"><img src="{{entry.thumbnail_url}}" style="max-width: 75px;"></a>
-                    <td style="font-weight: bold;"><a href="{{entry.url}}">{{entry.title}}</a></td>
-                </td>
-                    <tr>
-                        <td><a href="{{entry.url}}">{{entry.summary}}</a></td>
+<div class="row" style="padding-top: 120px;">
+    <div class="col-md-12 col-lg-8 item project-post">
+        <table id="rss_feed">
+            <thead>
+                <tr>
+                    <th style="font-size: x-large;" colspan=2>Dernières Nouvelles</th>
+                </tr>
+            </thead>
+            {% for entry in entries %}
+
+            <tbody style="border-top:1px solid #333333;">
+                    <tr style="border-right:1px solid #333333;">
+                        <td rowspan=2>
+                            <a href="{{entry.url}}"><img src="{{entry.thumbnail_url}}" style="max-width: 75px;"></a>
+                            <td style="font-weight: bold;"><a href="{{entry.url}}" >{{entry.title}}</a></td>
+                        </td>
+                            <tr>
+                                <td style="border-right:1px solid #333333;"><a href="{{entry.url}}">{{entry.summary}}</a></td>
+                            </tr>
+                        </td>
                     </tr>
-                </td>
-            </tr>
-        </a>
-        <tr>
-            <td colspan=2 style="font-size: x-small;">{{entry.date}}</td>
-        </tr>
-    </tbody>
+                </a>
+                <tr>
+                    <td colspan=2 style="font-size: x-small;border-bottom:1px solid #333333;border-right:1px solid #333333;">{{entry.date}}</td>
+                </tr>
+            </tbody>
 
-    {% endfor %}
-</table>
+
+            {% endfor %}
+        </table>
+    </div>
+    <div class="col-md-12 col-lg-4" id="meteo-widget">
+        <p style="font-size: x-large;font-weight: bold;"> La météo du jour</p>
+        <div id="cont_MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8">
+            <div id="spa_MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8"><a id="a_MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8" href="https://www.meteocity.com/france/caderousse-v3029254?utm_medium=widget&utm_source=referral&utm_campaign=france-caderousse-v3029254&utm_content=location" target="_top" style="color:#333;text-decoration:none;">Météo Caderousse</a> ©<a target="_top" href="https://www.meteocity.com?utm_medium=widget&utm_campaign=france-caderousse-v3029254&utm_content=homepage">M6météo</a></div>
+            <script type="text/javascript" src="https://www.meteocity.com/widget/js/MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8"></script>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

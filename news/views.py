@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render
 
 import feedparser
@@ -13,7 +15,9 @@ def rss_reader():
     small_entries = news_feed.entries[:5]
     for entry in small_entries:
         if len(entry["links"])<2 :
-            img = "{% static \'authentication/images/nopicture.png\' %}"
+            img = os.path.relpath(
+                '../static/authentication/images/nopicture.png'
+                )
         else :
             img = entry["links"][1]["href"]
         entries.append(

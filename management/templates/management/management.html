@@ -1,0 +1,55 @@
+{% extends 'authentication/base.html' %}
+
+{% block content %}
+    {% if user.is_staff %}
+    <div class="systeme_onglets" style="padding-top:120px;">
+        <div class="onglets">
+            <span class="onglet_0 onglet" id="onglet_employe" onclick="javascript:change_onglet('employe');">Employé</span>
+            <span class="onglet_0 onglet" id="onglet_parcelle" onclick="javascript:change_onglet('parcelle');">Parcelle</span>
+        </div>
+        <div class="contenu_onglets">
+            <div class="contenu_onglet" id="contenu_onglet_employe">
+                <h1 class="titre_onglet">Ajouter un nouvel employé</h1>
+                <div class="clear"></div>
+                <form class="form-inline" action="{% url 'management:add_employee' %}" method="POST">
+                    {% csrf_token %}
+                    <table>{{ emp_form.as_table }}</table>
+                    <button name="submit" type="submit" class="btn btn-success">Enregistrer</button>
+                </form>
+                {% if errors %}
+                    <div>
+                        {% for key, error in errors %}
+                            {% autoescape off %}
+                                {{ error }}
+                            {% endautoescape %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                </div>
+            <div class="contenu_onglet" id="contenu_onglet_parcelle">
+                <h1 class="titre_onglet">Ajouter une nouvelle parcelle</h1>
+                <div class="clear"></div>
+                <form class="form-inline" action="{% url 'management:add_plot' %}" method="POST">
+                    {% csrf_token %}
+                    <table>{{ plot_form.as_table }}</table>
+                    <button name="submit" type="submit" class="btn btn-success">Enregistrer</button>
+                </form>
+                {% if errors %}
+                    <div>
+                        {% for key, error in errors %}
+                            {% autoescape off %}
+                                {{ error }}
+                            {% endautoescape %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+                var anc_onglet = 'employe';
+                change_onglet(anc_onglet);
+        </script>
+    {% endif %}
+{% endblock %}

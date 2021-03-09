@@ -63,7 +63,8 @@ class LoginLogoutTestCase(TestCase):
         self.username = "mercuryf"
         self.password = "BohemianRhapsody"
         User.objects.create_user(
-            username = self.username, password = self.password
+            username = self.username,
+            password = self.password
         )
         
 
@@ -81,7 +82,10 @@ class LoginLogoutTestCase(TestCase):
         """
         request = self.client.post(
             reverse("authentication:login"),
-            {"username": self.username, "password": "ImInLoveWithMyCar"},
+            {
+                "username": self.username,
+                "password": "ImInLoveWithMyCar"
+            },
         )
         self.assertEqual(request.status_code, 200)
         self.assertFalse(request.context["user"].is_authenticated)
@@ -100,7 +104,10 @@ class LoginLogoutTestCase(TestCase):
         """
         request = self.client.post(
             reverse("authentication:login"),
-            {"username": self.username, "password": self.password},
+            {
+                "username": self.username,
+                "password": self.password
+            },
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/dashboard/")
@@ -119,7 +126,10 @@ class LoginLogoutTestCase(TestCase):
         *Status code = 302 (redirection)
         *Redirect page = index (after logout)
         """
-        self.client.login(username=self.username, password=self.password)
+        self.client.login(
+            username=self.username,
+            password=self.password
+            )
         request = self.client.get(reverse("authentication:logout"))
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/")

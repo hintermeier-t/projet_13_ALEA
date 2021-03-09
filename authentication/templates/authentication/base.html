@@ -32,6 +32,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'authentication/css/ddsmoothmenu.css' %}" />
 	<script type="text/javascript" src="{% static 'authentication/js/jquery.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'authentication/js/ddsmoothmenu.js' %}"></script>
+<!-- PERSONNAL-->
+<script type="text/javascript" src="{% static 'authentication/js/script.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'authentication/css/style.css' %}" />
 
 <!--/***********************************************
 * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
@@ -72,8 +75,12 @@ ddsmoothmenu.init({
             <nav class="mainMenu">
               <ul class="nav">
                 {% if user.is_authenticated %}
-                <li><a class="menu" href="#{% url 'dashboard' %}">Tableau de Bord</a></li>
-                
+                <li><a class="menu" href="{% url 'dashboard' %}">Tableau de Bord</a></li>
+                <li><a class="menu" href="{% url 'dashboard' %}">Planning</a></li>
+                <li><a class="menu" href="{% url 'dashboard' %}">Parcelles</a></li>
+                <li><a class="menu" href="{% url 'dashboard' %}">Tchat</a></li>
+                <li><a class="menu" href="{% url 'dashboard' %}">Compte</a></li>
+                <li><a class="menu" href="{% url 'management:management' %}">Management</a></li>
                 <li><a class="menu" href="{% url 'authentication:logout' %}">Se Déconnecter</a></li>
                 {% else %}
                 <li><a class="menu" href="{% url 'authentication:login' %}">Se Connecter</a></li>
