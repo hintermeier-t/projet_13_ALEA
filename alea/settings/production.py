@@ -1,3 +1,6 @@
+"""
+    Django production settings for ALEA.
+"""
 import os
 
 ALLOWED_HOSTS = ["46.101.80.206"]

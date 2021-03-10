@@ -1,14 +1,28 @@
+"""
+    News app's views
+"""
+# - Built-in modules
 import os
 
+# - Django modules
 from django.shortcuts import render
 
+# - V-env modules
 import feedparser
 import requests
 
+# - Custom modules
 from . import rss
 
 
 def rss_reader():
+    """
+    RSS reader.
+
+    Gather news from the "Chambre de l'Agriculture" RSS feed, and return
+        what needed to the Dashboard (authentication.views).
+    
+    """
     entries = []
     news_feed = feedparser.parse(
         "https://chambres-agriculture.fr/flux-rss/flux-rss-actualite/flux.rss"

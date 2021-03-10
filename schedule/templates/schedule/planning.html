@@ -1,0 +1,28 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="padding-top: 120px;">
+    <h1>Emploi du temps de {{ request.user.first_name }} {{ request.user.last_name }}</h1>
+    <div class="clear"></div>
+    <table style="border: 1px solid #333333;">
+        <tr style="border: 1px solid #333333; font-size: larger; ">
+            <td style="width: 120px;">Jour</td>
+            <td style="width: 120px;">Heure de début</td>
+            <td style="width: 120px;">Heure de fin</td>
+            <td style="width: 120px;">Tâche</td>
+            <td style="width: 120px;">Parcelle</td>
+        </tr>
+        {% for event in events %} 
+            <tr style="{% cycle 'background:#72b842;' 'background:#4a772b;' %} color:white; font-size:large;">
+                <td>{{event.day}}</td>
+                <td>{{ event.start }}</td>
+                <td>{{ event.end }}</td>
+                <td>{{ event.occupation }}</td>
+                <td>{{ event.plot }}</td>
+                {% endfor %}
+            </tr>
+
+    </table>
+</div>
+{% endblock %}
+

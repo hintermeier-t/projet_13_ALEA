@@ -1,10 +1,14 @@
+"""
+    Authentication app's views.
+"""
+
+# - Django modules
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect, get_object_or_404
 
-# Create your views here.
-
+# - Custom modules and models
 from news.views import rss_reader
 from news.rss import FeedEntry
 
@@ -19,10 +23,12 @@ def index(request):
 
 def login_view(request):
     """
-    Login page.
+        Login page.
 
-    Redirects on "index" page after login (or if user already logged in);
-    Renders signin page if not logged in, with error if invalid.
+        Redirects on "dashboard" page after login
+            (or if user already logged in);
+        Renders signin page with form if not logged in, with form error if
+            invalid.
 
     """
     form = AuthenticationForm()
@@ -45,12 +51,23 @@ def login_view(request):
 
 @login_required
 def logout_view(request):
+    """
+        Logout view.
+
+        End user's connection.
+    """
     logout(request)
     return redirect("index")
 
 
 @login_required
 def dashboard(request):
+    """
+        Dashboard view.
+        Leads to the central page of the app. Gather weather intel
+            (client-side), and News from the "Chambre de l'Agriculture".
+    """
+
     entries = rss_reader()
     context = {"entries": entries}
     return render(request, "authentication/dashboard.html", context)

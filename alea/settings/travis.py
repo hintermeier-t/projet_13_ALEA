@@ -1,3 +1,6 @@
+"""
+    Django Travis settings for CI.
+"""
 from . import *
 
 DATABASES = {

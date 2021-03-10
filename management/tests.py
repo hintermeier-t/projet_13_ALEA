@@ -391,7 +391,7 @@ class AddEventTestCase(TestCase):
             first_name="Farrokh",
             last_name="Bulsara",
             password="Und3rPressure",
-            email="freddie@mercuryd.uk",
+            email="freddie@mercury.uk",
             phone_number="0102030405",
             address="8 in Heaven",
         )

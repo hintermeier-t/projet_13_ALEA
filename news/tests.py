@@ -1,16 +1,22 @@
+"""
+    News app's tests
+    
+    """
+
+# - Django modules
 from django.test import TestCase
 from django.urls import reverse
 
+# - Custom modules
 from . import rss
 from .views import rss_reader
 
-# Create your tests here.
 
 
 class RssReaderPageTestCase(TestCase):
     def test_rssreader_page(self):
         """
-        Accessing rss reader view.
+        Accessing RSS reader view.
 
         Assertions:
         -----------
