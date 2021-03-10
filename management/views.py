@@ -1,8 +1,13 @@
+"""
+    Management app's views.
+"""
+
+# - Django modules
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-# - Models and forms
+# - Custom models and forms
 from schedule.forms import EventCreationForm
 from .forms import PlotCreationForm, EmployeeCreationForm
 from schedule.models import Event
@@ -10,6 +15,16 @@ from schedule.models import Event
 
 @login_required
 def management_view(request):
+    """
+    Management main page.
+
+    Gather every needed tool for staff users to manage teams, planning and
+    farming plots.
+
+    @login_required
+    user.is_staff ONLY
+
+    """
     if request.user.is_staff:
         context = {
             "plot_form": PlotCreationForm(),
@@ -24,6 +39,15 @@ def management_view(request):
 
 @login_required
 def add_employee(request):
+    """
+    Employee adding function
+
+    Add a new employee with connection, data...
+
+    @login_required
+    user.is_staff ONLY
+    
+    """
     if (request.user.is_staff) and (request.method == "POST"):
         form = EmployeeCreationForm(request.POST)
 
@@ -49,6 +73,15 @@ def add_employee(request):
 
 @login_required
 def add_plot(request):
+    """
+    Plot adding function
+
+    Add a new plot with required data...
+
+    @login_required
+    user.is_staff ONLY
+    
+    """
     if (request.user.is_staff) and (request.method == "POST"):
         form = PlotCreationForm(request.POST)
 
@@ -73,6 +106,15 @@ def add_plot(request):
 
 @login_required
 def add_event(request):
+    """
+    Event adding function
+
+    Add a new event to the planning.
+
+    @login_required
+    user.is_staff ONLY
+    
+    """
     if (request.user.is_staff) and (request.method == "POST"):
         form = EventCreationForm(request.POST)
 

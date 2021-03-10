@@ -76,7 +76,7 @@ ddsmoothmenu.init({
               <ul class="nav">
                 {% if user.is_authenticated %}
                 <li><a class="menu" href="{% url 'dashboard' %}">Tableau de Bord</a></li>
-                <li><a class="menu" href="{% url 'dashboard' %}">Planning</a></li>
+                <li><a class="menu" href="{% url 'schedule:planning' %}">Planning</a></li>
                 <li><a class="menu" href="{% url 'dashboard' %}">Parcelles</a></li>
                 <li><a class="menu" href="{% url 'dashboard' %}">Tchat</a></li>
                 <li><a class="menu" href="{% url 'dashboard' %}">Compte</a></li>

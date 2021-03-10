@@ -75,7 +75,7 @@ class LoginLogoutTestCase(TestCase):
         Assertions:
         -----------
         *Status code = 200 (we can access login page);
-        *User is not authenticated after post
+        *User IS NOT authenticated after post
         """
         request = self.client.post(
             reverse("authentication:login"),
@@ -108,7 +108,7 @@ class LoginLogoutTestCase(TestCase):
         """
         Conditions:
         -----------
-        *User is logged in.
+        *User IS logged in.
 
         Assertions:
         -----------
