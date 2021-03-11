@@ -24,7 +24,7 @@ class WeatherWidget():
         self.params = {
             'lat' : self.lat,
             'lon' : self.lon,
-            'appid' : '8f93d075b13ec5265df97e588c7d810d', #os.getenv('WEATHER_KEY'),
+            'appid' : os.getenv('WEATHER_KEY'),
             'units' : 'metric'
         }
         query = requests.get(self.url, self.params).json()
