@@ -19,7 +19,8 @@ def display_planning(request):
         )
     ).order_by('day', 'start')
     context = {
-        'events': event_list
+        'events' : event_list,
+        'title' : 'ALEA: Mon Planning'
     }
 
     return render(request, "schedule/planning.html", context)

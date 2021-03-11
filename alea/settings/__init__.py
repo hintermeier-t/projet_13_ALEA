@@ -28,7 +28,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 
+# Email settings
+EMAIL_BACKEND ="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = os.getenv('MAIL')
+DEFAULT_FROM_EMAIL = os.getenv('MAIL')
+EMAIL_HOST_PASSWORD = os.getenv('MAIL_PASSWD')
+EMAIL_PORT = 587 #TLS 465
 
+# GeoIP settings
+GEOIP_PATH = os.path.join(BASE_DIR, "geoip")
 # Application definition
 
 INSTALLED_APPS = [
@@ -131,7 +141,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

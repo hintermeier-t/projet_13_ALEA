@@ -7,12 +7,15 @@ import os
 # - Django modules
 from django.shortcuts import render
 
-# - V-env modules
+# - Venv modules
 import feedparser
+import geoip2.database
 import requests
 
+
 # - Custom modules
-from . import rss
+from .rss import FeedEntry
+from .weather import WeatherWidget
 
 
 def rss_reader():
@@ -34,7 +37,7 @@ def rss_reader():
         else:
             img = entry["links"][1]["href"]
         entries.append(
-            rss.FeedEntry(
+            FeedEntry(
                 entry["published"],
                 entry["title"],
                 entry["summary"],
@@ -43,3 +46,13 @@ def rss_reader():
             )
         )
     return entries
+
+def weather_update(ip = ""):
+    
+    widget  = WeatherWidget(ip)
+    widget.update()
+    
+
+    return widget
+            
+        

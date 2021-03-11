@@ -4,9 +4,10 @@
 <div class="clear"></div>
 <div class="clear height20"></div>
 
-<div class="container" style="padding-top: 120px;">
+<div class="container" style="padding-top: 120px;height:50vh">
     <div class="col-12">
-        <h5 class="card-title">Connectez-vous</h5>
+        <h1 class="card-title">Connectez-vous</h1>
+        <div class="clear"></div>
           <form class="form-inline" action="" method="POST">
             {% csrf_token %}
             <table>
@@ -15,5 +16,6 @@
             <button name="submit" type="submit" class="btn btn-success">Se connecter</button>
           </form>
     </div>
+    <p><a href="{% url 'authentication:forgotten_password' %}">Mot de passe oublié ?</a></p>
 </div>
 {% endblock %}

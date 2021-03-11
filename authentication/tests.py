@@ -1,8 +1,12 @@
 """
     Authentication app testing module.
 """
+# - Built-in module
+import re
+
 # - Django Modules
 from django.contrib.auth.models import User
+from django.core import mail
 from django.test import TestCase
 from django.urls import reverse
 
@@ -15,13 +19,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
 
+# - Custom models
+from management.models import Employee
+
 # - Index page
 class IndexPageTestCase(TestCase):
     """
     Testing index view.
     """
 
-    # - Index page returns 200
     def test_index_page(self):
         """
         Accessing index view.
@@ -63,9 +69,11 @@ class LoginLogoutTestCase(TestCase):
 
         self.username = "mercuryf"
         self.password = "BohemianRhapsody"
-        User.objects.create_user(username=self.username, password=self.password)
+        User.objects.create_user(
+            username=self.username,
+            password=self.password
+        )
 
-    # - test login view with invalid credentials
     def test_login_invalid_credentials(self):
         """
         Conditions:
@@ -84,7 +92,6 @@ class LoginLogoutTestCase(TestCase):
         self.assertEqual(request.status_code, 200)
         self.assertFalse(request.context["user"].is_authenticated)
 
-    # - test login view with valid credentials
     def test_login_valid_credentials(self):
         """
         Conditions:
@@ -103,7 +110,6 @@ class LoginLogoutTestCase(TestCase):
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/dashboard/")
 
-    # - Test logout view
     def test_logout(self):
         """
         Conditions:
@@ -119,3 +125,123 @@ class LoginLogoutTestCase(TestCase):
         request = self.client.get(reverse("authentication:logout"))
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/")
+
+class PasswordResetTestCase(TestCase):
+    """
+    Testing password reset function.
+
+    Attributes (setUp method) :
+    ---------------------------
+    :self.username (string): username field used to connect and create User
+        object;
+    :self.password (string): password field used to connect and create User
+        object;
+    :self.user (User): Django's User object.
+    """
+
+    def setUp(self):
+        # - Employee
+        self.username = "marsb"
+        self.password = "24KMagic"
+        self.employee = Employee.objects.create_user(
+            username = self.username,
+            first_name = "Bruno",
+            last_name = "Mars",
+            password = self.password,
+            email = "unothodox@jukebox.com",
+            phone_number = "0102030405",
+            address = "24, Silk Sonic Road",
+        )
+        self.new_password = "LeaveTheD00rOpen"
+
+    def test_forgotten_password(self):
+        """
+        A user queries a new password.
+
+        Assertion:
+        ----------
+        *   Returns 200 (OK).
+        """
+        request = self.client.get(
+            reverse('authentication:forgotten_password')
+        )
+        self.assertEqual(request.status_code, 200)
+
+    def test_reset_mail_send(self):
+        """
+        A user send a password reset request.
+
+        Assertion:
+        ----------
+        *   No mail sent before;
+        *   Returns 200 (OK);
+        *   A message is displayed;
+        *   A mail is sent;
+        *   The mail has the right subject;
+        """
+
+        self.assertEqual(len(mail.outbox), 0)
+
+        request = self.client.post(
+            reverse("authentication:password_reset_query"),
+            {
+                "username": self.username,
+            }
+        )
+
+        self.assertEqual(request.status_code, 200)
+        self.assertEqual(request.context['message'],
+        "Un e-mail vient de vous être envoyé. Consultez votre boîte mails")
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            mail.outbox[0].subject,
+            "ALEA :Vous avez demandé un nouveau mot de passe"
+        )
+    def test_force_password_change(self):
+        """
+        A non user try to force change password.
+
+        Condition:
+        ----------
+        *   User IS NOT logged in.
+
+        Assertion:
+        ----------
+        *   Request returns 302;
+        *   Redirection to login page.
+        """
+
+        self.client.logout()
+        request = self.client.post(
+            reverse("authentication:password_change"),
+            {'password' : self.new_password}
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/authentication/login/?next=/authentication/password_change"
+        )
+
+    def test_password_change(self):
+        """
+        A user changes his password.
+
+        Condition:
+        ----------
+        *   User IS logged in.
+
+        Assertion:
+        ----------
+        *   Request returns 302;
+        *   Redirection to dashboard page.
+        """
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.post(
+            reverse("authentication:password_change"),
+            {'password' : self.new_password}
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertEqual(request.url, "/dashboard/")
