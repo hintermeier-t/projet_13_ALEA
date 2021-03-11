@@ -27,9 +27,10 @@ def management_view(request):
     """
     if request.user.is_staff:
         context = {
-            "plot_form": PlotCreationForm(),
-            "emp_form": EmployeeCreationForm(),
-            "event_form": EventCreationForm(),
+            'title' : 'ALEA: Gestion',
+            'plot_form' : PlotCreationForm(),
+            'emp_form' : EmployeeCreationForm(),
+            'event_form' : EventCreationForm(),
         }
 
         return render(request, "management/management.html", context)
@@ -48,6 +49,7 @@ def add_employee(request):
     user.is_staff ONLY
     
     """
+    
     if (request.user.is_staff) and (request.method == "POST"):
         form = EmployeeCreationForm(request.POST)
 
@@ -68,6 +70,7 @@ def add_employee(request):
                 },
             )
     else:
+        form = EmployeeCreationForm()
         return HttpResponse(status=403)
 
 

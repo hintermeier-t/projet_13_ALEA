@@ -590,3 +590,552 @@ console.error: services.settings:
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1615368626825	geckodriver	INFO	Listening on 127.0.0.1:62167
+1615368629877	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileFi2D4C"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368633485	Marionette	INFO	Listening on port 62175
+1615368633619	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615368684735	Marionette	INFO	Stopped listening on port 62175
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileVELVGT"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368642365	Marionette	INFO	Listening on port 62241
+1615368642813	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615368686695	Marionette	INFO	Stopped listening on port 62241
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofile3PzZqL"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368660088	Marionette	INFO	Listening on port 62305
+1615368660541	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615368687685	Marionette	INFO	Stopped listening on port 62305
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615368815013	geckodriver	INFO	Listening on 127.0.0.1:62455
+1615368818055	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileEaaVz8"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368821538	Marionette	INFO	Listening on port 62464
+1615368821726	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615368932987	Marionette	INFO	Stopped listening on port 62464
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileEQJeOg"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368829783	Marionette	INFO	Listening on port 62525
+1615368830275	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615368933859	Marionette	INFO	Stopped listening on port 62525
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileYGtSvp"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368853958	Marionette	INFO	Listening on port 62600
+1615368854049	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615368935063	Marionette	INFO	Stopped listening on port 62600
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615368956561	geckodriver	INFO	Listening on 127.0.0.1:62788
+1615368959602	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilejxm764"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368963785	Marionette	INFO	Listening on port 62797
+1615368963935	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615368965509	Marionette	INFO	Stopped listening on port 62797
+1615368966969	geckodriver	INFO	Listening on 127.0.0.1:62848
+1615368970018	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileuc7T19"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368974349	Marionette	INFO	Listening on port 62875
+1615368974853	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615368986863	Marionette	INFO	Stopped listening on port 62875
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615368988069	geckodriver	INFO	Listening on 127.0.0.1:62965
+1615368991121	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileI689eh"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615368994973	Marionette	INFO	Listening on port 62974
+1615368995342	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 20864, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1615369011766	Marionette	INFO	Stopped listening on port 62974
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369180878	geckodriver	INFO	Listening on 127.0.0.1:63124
+1615369183916	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofile7BPSpW"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369188172	Marionette	INFO	Listening on port 63133
+1615369188230	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369226573	Marionette	INFO	Stopped listening on port 63133
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileKqIF4J"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369198006	Marionette	INFO	Listening on port 63205
+1615369198148	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369227572	Marionette	INFO	Stopped listening on port 63205
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilegTVmqk"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369215171	Marionette	INFO	Listening on port 63274
+1615369215475	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615369228713	Marionette	INFO	Stopped listening on port 63274
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369389772	geckodriver	INFO	Listening on 127.0.0.1:63596
+1615369392850	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilez0CltJ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369397483	Marionette	INFO	Listening on port 63605
+1615369397673	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369418624	Marionette	INFO	Stopped listening on port 63605
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileLC5ZLn"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369406506	Marionette	INFO	Listening on port 63677
+1615369406715	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369426860	Marionette	INFO	Stopped listening on port 63677
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilegFGk2l"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369424373	Marionette	INFO	Listening on port 63749
+1615369424845	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615369427974	Marionette	INFO	Stopped listening on port 63749
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369544882	geckodriver	INFO	Listening on 127.0.0.1:63877
+1615369547935	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileNOdX7M"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369551679	Marionette	INFO	Listening on port 63886
+1615369552154	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369553599	Marionette	INFO	Stopped listening on port 63886
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369554707	geckodriver	INFO	Listening on 127.0.0.1:63930
+1615369557764	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilegRA5dr"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369561476	Marionette	INFO	Listening on port 63938
+1615369561950	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369571630	Marionette	INFO	Stopped listening on port 63938
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369572964	geckodriver	INFO	Listening on 127.0.0.1:63996
+1615369576025	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilee3hQYk"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369579558	Marionette	INFO	Listening on port 64004
+1615369579743	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615369579921	Marionette	INFO	Stopped listening on port 64004
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  Error: Shutdown, aborting read-only worker requests.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369645255	geckodriver	INFO	Listening on 127.0.0.1:64065
+1615369648309	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofile89J8Co"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369654202	Marionette	INFO	Listening on port 64101
+1615369654412	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369666284	Marionette	INFO	Stopped listening on port 64101
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369667373	geckodriver	INFO	Listening on 127.0.0.1:64227
+1615369670423	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileJB1H5N"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369674180	Marionette	INFO	Listening on port 64241
+1615369674616	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369695977	Marionette	INFO	Stopped listening on port 64241
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369697314	geckodriver	INFO	Listening on 127.0.0.1:64317
+1615369700360	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileeElEih"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369704883	Marionette	INFO	Listening on port 64330
+1615369705182	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615369705330	Marionette	INFO	Stopped listening on port 64330
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369740573	geckodriver	INFO	Listening on 127.0.0.1:64421
+1615369743614	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilexDTPyI"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369747741	Marionette	INFO	Listening on port 64436
+1615369747835	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369779735	Marionette	INFO	Stopped listening on port 64436
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369780938	geckodriver	INFO	Listening on 127.0.0.1:64521
+1615369783981	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilemITtzo"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369788244	Marionette	INFO	Listening on port 64529
+1615369788309	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369828609	Marionette	INFO	Stopped listening on port 64529
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369829934	geckodriver	INFO	Listening on 127.0.0.1:64597
+1615369832969	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileXp7eaO"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369837181	Marionette	INFO	Listening on port 64605
+1615369837320	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615369837507	Marionette	INFO	Stopped listening on port 64605
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369875673	geckodriver	INFO	Listening on 127.0.0.1:64664
+1615369878741	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilehZEceI"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369882459	Marionette	INFO	Listening on port 64672
+1615369882945	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369884470	Marionette	INFO	Stopped listening on port 64672
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369885680	geckodriver	INFO	Listening on 127.0.0.1:64721
+1615369888739	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilez7IJKQ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369892241	Marionette	INFO	Listening on port 64729
+1615369892435	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615369902531	Marionette	INFO	Stopped listening on port 64729
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615369903866	geckodriver	INFO	Listening on 127.0.0.1:64788
+1615369906911	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileUMhIYL"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615369911351	Marionette	INFO	Listening on port 64796
+1615369911731	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615369911899	Marionette	INFO	Stopped listening on port 64796
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615370267484	geckodriver	INFO	Listening on 127.0.0.1:65402
+1615370270559	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofilexOyNJW"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615370274930	Marionette	INFO	Listening on port 65411
+1615370275375	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615370277313	Marionette	INFO	Stopped listening on port 65411
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615370279079	geckodriver	INFO	Listening on 127.0.0.1:65473
+1615370282140	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileDpxjIr"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615370286207	Marionette	INFO	Listening on port 65485
+1615370286368	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.min.js, line 19: unreachable code after return statement
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://127.0.0.1:8000/static/authentication/js/jquery.cycle2.min.js, line 17: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/jquery-1.10.2.min.js, line 4: Error: Syntax error, unrecognized expression: /authentication/login/
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/ddsmoothmenu.js, line 49: TypeError: $mainmenu.parent().get(...) is undefined
+JavaScript error: http://127.0.0.1:8000/static/authentication/js/stickUp.min.js, line 1: TypeError: $(...).offset() is undefined
+1615370296653	Marionette	INFO	Stopped listening on port 65485
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615370297915	geckodriver	INFO	Listening on 127.0.0.1:49175
+1615370300974	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thoma\\AppData\\Local\\Temp\\rust_mozprofileR2BpVj"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615370305894	Marionette	INFO	Listening on port 49183
+1615370306308	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615370306495	Marionette	INFO	Stopped listening on port 49183
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

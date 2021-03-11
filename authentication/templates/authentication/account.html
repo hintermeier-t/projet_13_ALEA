@@ -1,0 +1,34 @@
+{% extends 'authentication/base.html' %}
+{% block content %}
+    <div class="container" style="padding-top:120px; padding-bottom: 100px;">
+        <h1>Mon Compte</h1>
+        <div class="clear"></div>
+        <table>
+            <tr style="border-bottom: 1px solid #333333;">
+                <th style="width:100px">Nom: </th>
+                <td  style="width:100px">{{ employee.last_name }}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333333;">
+                <th style="width:100px">Prénom: </th>
+                <td  style="width:100px">{{ employee.first_name }}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333333;">
+                <th style="width:100px">Nom d'utilisateur: </th>
+                <td  style="width:100px">{{ employee.username }}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333333;">
+                <th style="width:100px">E-mail: </th>
+                <td  style="width:100px">{{ employee.email }}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333333;">
+                <th style="width:100px">Adresse:</th>
+                <td  style="width:100px">{{ employee.address }}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333333;">
+                <th style="width:100px">Numéros de téléphone</th>
+                <td  style="width:100px">{{ employee.phone_number }}</td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}

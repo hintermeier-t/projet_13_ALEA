@@ -1,0 +1,29 @@
+{% extends 'authentication/base.html' %}
+
+{% block content %}
+<div class='container col-sm-12 col-md-4'></div>
+<div class='container col-sm-12 col-md-4' style="padding-top: 120px; height:100vh;">
+    <h1>Messagerie interne</h1>
+    <div class="clear"></div>
+    <table id="chatbox" style="border: 1px solid #333333; width: 100%;">
+        {% for message in messages %}
+        <tr style="background:#4a772b; color:white;">
+            <td style="font-weight: bold;">{{message.employee.username}} :</td>
+            <td>{{message.content}}</td>
+        </tr>
+        <tr style="background:#72b842;color:black;">
+            <td colspan="2" style="font-size: x-small;">{{message.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form class="form-inline" action="{% url 'communication:chat' %}" method="POST">
+        {% csrf_token %}
+        <p><label for="content">Votre Message:</label>
+            <textarea name="content" id="content" required rows="5" cols="33"></textarea>
+        </p>
+
+        <button name="submit" type="submit" class="btn btn-success">Enregistrer</button>
+    </form>
+</div>
+<div class='container col-sm-12 col-md-4'></div>
+{% endblock %}

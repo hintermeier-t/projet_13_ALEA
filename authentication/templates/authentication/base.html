@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Application Logistique pour Exploitation Agricole</title>
+    <title>{{title}}</title>
     <meta name="keywords" content="" />
 	<meta name="description" content="" />
   {% load static %}
@@ -75,15 +75,16 @@ ddsmoothmenu.init({
             <nav class="mainMenu">
               <ul class="nav">
                 {% if user.is_authenticated %}
-                <li><a class="menu" href="{% url 'dashboard' %}">Tableau de Bord</a></li>
-                <li><a class="menu" href="{% url 'schedule:planning' %}">Planning</a></li>
-                <li><a class="menu" href="{% url 'dashboard' %}">Parcelles</a></li>
-                <li><a class="menu" href="{% url 'dashboard' %}">Tchat</a></li>
-                <li><a class="menu" href="{% url 'dashboard' %}">Compte</a></li>
-                <li><a class="menu" href="{% url 'management:management' %}">Management</a></li>
-                <li><a class="menu" href="{% url 'authentication:logout' %}">Se Déconnecter</a></li>
-                {% else %}
-                <li><a class="menu" href="{% url 'authentication:login' %}">Se Connecter</a></li>
+                  <li><a class="menu" href="{% url 'dashboard' %}">Tableau de Bord</a></li>
+                  <li><a class="menu" href="{% url 'schedule:planning' %}">Planning</a></li>
+                  <li><a class="menu" href="{% url 'communication:chat' %}">Tchat</a></li>
+                  <li><a class="menu" href="{% url 'authentication:account' %}">Compte</a></li>
+                  {% if user.is_staff %}
+                    <li><a class="menu" href="{% url 'management:management' %}">Management</a></li>
+                  {% endif %}
+                  <li><a class="menu" href="{% url 'authentication:logout' %}">Se Déconnecter</a></li>
+                  {% else %}
+                  <li><a class="menu" href="{% url 'authentication:login' %}">Se Connecter</a></li>
                 {% endif %}
               </ul>
             </nav>

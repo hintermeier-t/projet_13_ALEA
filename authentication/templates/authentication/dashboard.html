@@ -5,11 +5,8 @@
 <div class="row" style="padding-top: 120px;">
     <div class="col-md-12 col-lg-8 item project-post">
         <table id="rss_feed">
-            <thead>
-                <tr>
-                    <th style="font-size: x-large;" colspan=2>Dernières Nouvelles</th>
-                </tr>
-            </thead>
+            <h1>Dernières Nouvelles</h1>
+            <div class="clear"></div>
             {% for entry in entries %}
 
             <tbody style="border-top:1px solid #333333;">
@@ -34,10 +31,15 @@
         </table>
     </div>
     <div class="col-md-12 col-lg-4" id="meteo-widget">
-        <p style="font-size: x-large;font-weight: bold;"> La météo du jour</p>
-        <div id="cont_MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8">
-            <div id="spa_MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8"><a id="a_MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8" href="https://www.meteocity.com/france/caderousse-v3029254?utm_medium=widget&utm_source=referral&utm_campaign=france-caderousse-v3029254&utm_content=location" target="_top" style="color:#333;text-decoration:none;">Météo Caderousse</a> ©<a target="_top" href="https://www.meteocity.com?utm_medium=widget&utm_campaign=france-caderousse-v3029254&utm_content=homepage">M6météo</a></div>
-            <script type="text/javascript" src="https://www.meteocity.com/widget/js/MzAyOTI1NHwxfDN8MXwzfCNiN2I3Yjd8NnwjZmZmZmZmfGd8"></script>
+        <h1> La météo du jour</h1>
+        <div class="clear"></div>
+        <div>
+            <img src="{{ weather_data.icon }}" style="max-width: 100px;">
+            <p>Température: {{weather_data.temp}}°C</p>
+            <p>Pression : {{weather_data.pressure}} hPa</p>
+            <p>Humidité : {{weather_data.humidity}}</p>
+            <p>Vitesse du vent : {{weather_data.wind_speed}} km/h</p>
+            <p><a href="https://openweathermap.org/weathermap?zoom=12&lat={{weather_data.lat}}&lon={{weather_data.lon}}">Plus d'informations sur OpenWeatherMap</a></p>
         </div>
     </div>
 </div>
