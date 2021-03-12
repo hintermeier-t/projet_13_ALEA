@@ -1,7 +1,6 @@
 {% extends 'authentication/base.html' %}
 
 {% block content %}
-    {% if user.is_staff %}
         
     <div class="systeme_onglets" style="padding-top:120px;">
         {% if request.session.message is not None %}
@@ -13,6 +12,9 @@
             <span class="onglet_0 onglet" id="onglet_employe" onclick="javascript:change_onglet('employe');">Nouvel employé</span>
             <span class="onglet_0 onglet" id="onglet_parcelle" onclick="javascript:change_onglet('parcelle');">Nouvelle parcelle</span>
             <span class="onglet_0 onglet" id="onglet_event" onclick="javascript:change_onglet('event');">Nouvel événement</span>
+            <span class="onglet_0 onglet" id="onglet_m_employe" onclick="javascript:change_onglet('m_employe');">Effectifs</span>
+            <span class="onglet_0 onglet" id="onglet_m_parcelle" onclick="javascript:change_onglet('m_parcelle');">Liste des Parcelles</span>
+            <span class="onglet_0 onglet" id="onglet_m_event" onclick="javascript:change_onglet('m_event');">Plannings individuels</span>
         </div>
         <div class="contenu_onglets">
             <div class="contenu_onglet" id="contenu_onglet_employe">
@@ -32,7 +34,7 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                </div>
+            </div>
             <div class="contenu_onglet" id="contenu_onglet_parcelle">
                 <h1 class="titre_onglet">Ajouter une nouvelle parcelle</h1>
                 <div class="clear"></div>
@@ -69,12 +71,123 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                </div>
+            </div>
+            <div class="contenu_onglet" id="contenu_onglet_m_employe">
+                <h1 class="titre_onglet">Liste des employés</h1>
+                <div class="clear"></div>
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Adresse Mail</th>
+                        <th>Numéros de téléphone</th>
+                        <th>Nom de connexion</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    {% for employee in employees %}
+                    <tr style="{% cycle 'background:#72b842;' 'background:#4a772b;' %} color:white;">
+                        <td>{{ employee.last_name }}</td>
+                        <td>{{ employee.first_name }}</td>
+                        <td>{{ employee.email }}</td>
+                        <td>{{ employee.phone_number }}</td>
+                        <td>{{ employee.username }}</td>
+                        <td><i class="fa fa-edit"></i></td>
+                        <td><a href="{% url 'management:delete' 'employee' employee.id %}"><i class="fa fa-trash-o"></i></a></td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan=7>Aucun employé enregistré</td></tr>
+                    {% endfor %}
+                </table>
+                
+            </div>
+            <div class="contenu_onglet" id="contenu_onglet_m_parcelle">
+                <h1 class="titre_onglet">Liste des parcelles</h1>
+                <div class="clear"></div>
+                <table>
+                    <tr>
+                        <th>Numéros</th>
+                        <th>Variété</th>
+                        <th>Etendue</th>
+                        <th>Commentaire</th>
+                        <th>Labourrée</th>
+                        <th>Arrosée</th>
+                        <th>Sulfatée</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    {% for plot in plots %}
+                    <tr style="{% cycle 'background:#72b842;' 'background:#4a772b;' %} color:white;">
+                        <td>{{ plot.id }}</td>
+                        <td>{{ plot.variety }}</td>
+                        <td>{{ plot.area }}</td>
+                        <td>{{ plot.comment }}</td>
+                        <td>
+                            {% if plot.plowed %}
+                            <i class="fa fa-check-circle"></i>
+                            {% else %}
+                            <i class="fa fa-times-circle"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if plot.watered %}
+                            <i class="fa fa-check-circle"></i>
+                            {% else %}
+                            <i class="fa fa-times-circle"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if plot.sulphated %}
+                            <i class="fa fa-check-circle"></i>
+                            {% else %}
+                            <i class="fa fa-times-circle"></i>
+                            {% endif %}
+                        </td>
+                        <td><i class="fa fa-edit"></i></td>
+                        <td><a href="{% url 'management:delete' 'plot' plot.id %}"><i class="fa fa-trash-o"></i></a></td>
+                    </tr>
+                    {% empty%}
+                    <tr><td colspan=9>Aucune parcelle enregistrée</td></tr>
+                    {% endfor %}
+                </table>
+                
+            </div>
+            <div class="contenu_onglet" id="contenu_onglet_m_event">
+                <h1 class="titre_onglet">Sélectionnez un employé pour afficher son planning</h1>
+                <div class="clear"></div>
+                <table>
+                    <tr>
+                        <th>Employé</th>
+                        <th>Jour</th>
+                        <th>Début</th>
+                        <th>Fin</th>
+                        <th>Parcelle</th>
+                        <th>Tâche</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    {% for event in events %}
+                    <tr style="{% cycle 'background:#72b842;' 'background:#4a772b;' %} color:white;">
+                        <td>{{even.employee}}</td>
+                        <td>{{event.day}}</td>
+                        <td>{{event.start}}</td>
+                        <td>{{event.end}}</td>
+                        <td>{{event.plot}}</td>
+                        <td>{{event.occupation}}</td>
+                        <td><i class="fa fa-edit"></i></td>
+                        <td><a href="{% url 'management:delete' 'event' event.id %}"><i class="fa fa-trash-o"></i></a></td>
+                    </tr>
+                    {% empty%}
+                    <tr><td colspan=8>Aucun événement enregistré</td></tr>
+                    {% endfor %}
+                </table>
+                
+            </div>
         </div>
     </div>
     <script type="text/javascript">
                 var anc_onglet = 'employe';
                 change_onglet(anc_onglet);
         </script>
-    {% endif %}
+    
 {% endblock %}

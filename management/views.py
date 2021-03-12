@@ -3,17 +3,19 @@
 """
 
 # - Django modules
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # - Custom models and forms
-from schedule.forms import EventCreationForm
+from.models import Plot, Employee
 from .forms import PlotCreationForm, EmployeeCreationForm
+from schedule.forms import EventCreationForm
 from schedule.models import Event
 
 
-@login_required
+@staff_member_required
 def management_view(request):
     """
     Management main page.
@@ -21,36 +23,34 @@ def management_view(request):
     Gather every needed tool for staff users to manage teams, planning and
     farming plots.
 
-    @login_required
-    user.is_staff ONLY
+    @staff_member_required
 
     """
-    if request.user.is_staff:
-        context = {
-            'title' : 'ALEA: Gestion',
-            'plot_form' : PlotCreationForm(),
-            'emp_form' : EmployeeCreationForm(),
-            'event_form' : EventCreationForm(),
-        }
+    context = {
+        'title' : 'ALEA: Gestion',
+        'plot_form' : PlotCreationForm(),
+        'emp_form' : EmployeeCreationForm(),
+        'event_form' : EventCreationForm(),
+        'employees' : Employee.objects.all(),
+        'plots' : Plot.objects.all(),
+        'events' : Event.objects.all(),
+    }
 
-        return render(request, "management/management.html", context)
-    else:
-        return redirect("dashboard")
+    return render(request, "management/management.html", context)
 
 
-@login_required
+@staff_member_required
 def add_employee(request):
     """
     Employee adding function
 
     Add a new employee with connection, data...
 
-    @login_required
-    user.is_staff ONLY
+    @staff_member_required
     
     """
     
-    if (request.user.is_staff) and (request.method == "POST"):
+    if request.method == "POST":
         form = EmployeeCreationForm(request.POST)
 
         if form.is_valid():
@@ -74,18 +74,18 @@ def add_employee(request):
         return HttpResponse(status=403)
 
 
-@login_required
+@staff_member_required
 def add_plot(request):
     """
     Plot adding function
 
     Add a new plot with required data...
 
-    @login_required
-    user.is_staff ONLY
+    @staff_member_required
     
     """
-    if (request.user.is_staff) and (request.method == "POST"):
+
+    if request.method == "POST":
         form = PlotCreationForm(request.POST)
 
         if form.is_valid():
@@ -107,18 +107,17 @@ def add_plot(request):
         return HttpResponse(status=403)
 
 
-@login_required
+@staff_member_required
 def add_event(request):
     """
     Event adding function
 
     Add a new event to the planning.
 
-    @login_required
-    user.is_staff ONLY
+    @staff_member_required
     
     """
-    if (request.user.is_staff) and (request.method == "POST"):
+    if request.method == "POST":
         form = EventCreationForm(request.POST)
 
         if form.is_valid():
@@ -146,3 +145,28 @@ def add_event(request):
             )
     else:
         return HttpResponse(status=403)
+
+@staff_member_required
+def delete(request, model, id):
+    if model == "employee":
+     to_delete = Employee.objects.get(pk=id)
+     to_delete.delete(keep_parents=False)
+     request.session["message"] = (
+                "L'employé a été effacé avec succès !"
+                )
+
+    if model == "plot":
+     to_delete = Plot.objects.get(pk=id)
+     to_delete.delete(keep_parents=False)
+     request.session["message"] = (
+                "La parcelle a été effacée avec succès !"
+                )
+
+    if model == "event":
+     to_delete = Event.objects.get(pk=id)
+     to_delete.delete(keep_parents=False)
+     request.session["message"] = (
+                "L'événement a été effacé avec succès !"
+                )
+               
+    return redirect("management:management")
