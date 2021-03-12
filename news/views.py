@@ -24,7 +24,7 @@ def rss_reader():
 
     Gather news from the "Chambre de l'Agriculture" RSS feed, and return
         what needed to the Dashboard (authentication.views).
-    
+
     """
     entries = []
     news_feed = feedparser.parse(
@@ -33,7 +33,8 @@ def rss_reader():
     small_entries = news_feed.entries[:5]
     for entry in small_entries:
         if len(entry["links"]) < 2:
-            img = os.path.relpath("../static/authentication/images/nopicture.png")
+            img = os.path.relpath(
+                "../static/authentication/images/nopicture.png")
         else:
             img = entry["links"][1]["href"]
         entries.append(
@@ -47,12 +48,10 @@ def rss_reader():
         )
     return entries
 
-def weather_update(ip = ""):
-    
-    widget  = WeatherWidget(ip)
+
+def weather_update(ip=""):
+
+    widget = WeatherWidget(ip)
     widget.update()
-    
 
     return widget
-            
-        

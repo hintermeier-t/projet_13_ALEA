@@ -2,8 +2,11 @@ from django.db import models
 from management.models import Plot, Employee
 
 # Create your models here.
+
+
 class Event(models.Model):
-    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, null=False)
+    employee = models.ForeignKey(
+        Employee, on_delete=models.CASCADE, null=False)
     plot = models.ForeignKey(Plot, on_delete=models.CASCADE, null=False)
     day = models.CharField(max_length=10)
     start = models.TimeField()
@@ -11,4 +14,4 @@ class Event(models.Model):
     occupation = models.CharField(max_length=100, null=False)
 
     class Meta:
-        ordering = ["employee","day","start"]
+        ordering = ["employee", "day", "start"]

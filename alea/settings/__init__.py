@@ -29,13 +29,13 @@ DEBUG = True
 ALLOWED_HOSTS = ["127.0.0.1"]
 
 # Email settings
-EMAIL_BACKEND ="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = os.getenv('MAIL')
-DEFAULT_FROM_EMAIL = os.getenv('MAIL')
-EMAIL_HOST_PASSWORD = os.getenv('MAIL_PASSWD')
-EMAIL_PORT = 587 #TLS 465
+EMAIL_HOST_USER = os.getenv("MAIL")
+DEFAULT_FROM_EMAIL = os.getenv("MAIL")
+EMAIL_HOST_PASSWORD = os.getenv("MAIL_PASSWD")
+EMAIL_PORT = 587  # TLS 465
 
 # GeoIP settings
 GEOIP_PATH = os.path.join(BASE_DIR, "geoip")
@@ -94,7 +94,8 @@ WSGI_APPLICATION = "alea.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",  # on utilise l'adaptateur postgresql
+        # on utilise l'adaptateur postgresql
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "alea",  # le nom de notre base de donnees creee precedemment
         "USER": "postgres",  # attention : remplacez par votre nom d'utilisateur
         "PASSWORD": "2s7gix9u",

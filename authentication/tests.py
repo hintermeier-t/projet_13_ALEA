@@ -23,6 +23,8 @@ from webdriver_manager.firefox import GeckoDriverManager
 from management.models import Employee
 
 # - Index page
+
+
 class IndexPageTestCase(TestCase):
     """
     Testing index view.
@@ -70,9 +72,7 @@ class LoginLogoutTestCase(TestCase):
         self.username = "mercuryf"
         self.password = "BohemianRhapsody"
         User.objects.create_user(
-            username=self.username,
-            password=self.password
-        )
+            username=self.username, password=self.password)
 
     def test_login_invalid_credentials(self):
         """
@@ -126,6 +126,7 @@ class LoginLogoutTestCase(TestCase):
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/")
 
+
 class PasswordResetTestCase(TestCase):
     """
     Testing password reset function.
@@ -144,13 +145,13 @@ class PasswordResetTestCase(TestCase):
         self.username = "marsb"
         self.password = "24KMagic"
         self.employee = Employee.objects.create_user(
-            username = self.username,
-            first_name = "Bruno",
-            last_name = "Mars",
-            password = self.password,
-            email = "unothodox@jukebox.com",
-            phone_number = "0102030405",
-            address = "24, Silk Sonic Road",
+            username=self.username,
+            first_name="Bruno",
+            last_name="Mars",
+            password=self.password,
+            email="unothodox@jukebox.com",
+            phone_number="0102030405",
+            address="24, Silk Sonic Road",
         )
         self.new_password = "LeaveTheD00rOpen"
 
@@ -162,9 +163,7 @@ class PasswordResetTestCase(TestCase):
         ----------
         *   Returns 200 (OK).
         """
-        request = self.client.get(
-            reverse('authentication:forgotten_password')
-        )
+        request = self.client.get(reverse("authentication:forgotten_password"))
         self.assertEqual(request.status_code, 200)
 
     def test_reset_mail_send(self):
@@ -186,17 +185,19 @@ class PasswordResetTestCase(TestCase):
             reverse("authentication:password_reset_query"),
             {
                 "username": self.username,
-            }
+            },
         )
 
         self.assertEqual(request.status_code, 200)
-        self.assertEqual(request.context['message'],
-        "Un e-mail vient de vous être envoyé. Consultez votre boîte mails")
+        self.assertEqual(
+            request.context["message"],
+            "Un e-mail vient de vous être envoyé. Consultez votre boîte mails",
+        )
         self.assertEqual(len(mail.outbox), 1)
         self.assertEqual(
-            mail.outbox[0].subject,
-            "ALEA :Vous avez demandé un nouveau mot de passe"
+            mail.outbox[0].subject, "ALEA :Vous avez demandé un nouveau mot de passe"
         )
+
     def test_force_password_change(self):
         """
         A non user try to force change password.
@@ -213,13 +214,12 @@ class PasswordResetTestCase(TestCase):
 
         self.client.logout()
         request = self.client.post(
-            reverse("authentication:password_change"),
-            {'password' : self.new_password}
+            reverse("authentication:password_change"), {
+                "password": self.new_password}
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
-            request,
-            "/authentication/login/?next=/authentication/password_change"
+            request, "/authentication/login/?next=/authentication/password_change"
         )
 
     def test_password_change(self):
@@ -235,13 +235,10 @@ class PasswordResetTestCase(TestCase):
         *   Request returns 302;
         *   Redirection to dashboard page.
         """
-        self.client.login(
-            username = self.username,
-            password = self.password
-        )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.post(
-            reverse("authentication:password_change"),
-            {'password' : self.new_password}
+            reverse("authentication:password_change"), {
+                "password": self.new_password}
         )
         self.assertEqual(request.status_code, 302)
         self.assertEqual(request.url, "/dashboard/")

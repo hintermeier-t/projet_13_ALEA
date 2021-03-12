@@ -5,8 +5,6 @@ from django.urls import path, include
 # - Views
 from . import views
 
-urlpatterns = [
-    path("", views.display_planning, name="planning")
-]
+urlpatterns = [path("", views.display_planning, name="planning")]
 
 app_name = "schedule"
