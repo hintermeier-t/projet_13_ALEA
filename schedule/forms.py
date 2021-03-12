@@ -9,7 +9,6 @@ from management.models import Employee, Plot
 
 class EventCreationForm(ModelForm):
     employee = forms.ModelChoiceField(queryset=Employee.objects.all())
-
     plot = forms.ModelChoiceField(queryset=Plot.objects.all())
     occupation = forms.CharField(max_length=100, required=True)
     day = forms.ChoiceField(

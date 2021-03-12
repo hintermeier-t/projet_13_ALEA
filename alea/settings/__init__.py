@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 # Email settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = os.getenv("MAIL_HOST")
 EMAIL_HOST_USER = os.getenv("MAIL")
 DEFAULT_FROM_EMAIL = os.getenv("MAIL")
 EMAIL_HOST_PASSWORD = os.getenv("MAIL_PASSWD")

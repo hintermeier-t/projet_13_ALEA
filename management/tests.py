@@ -1,6 +1,10 @@
 """
     Management app testing module.
 """
+
+# - Built-in module
+import datetime
+
 # - Django Modules
 from django.contrib.auth.models import User
 from django.test import TestCase
@@ -9,6 +13,7 @@ from django.urls import reverse
 
 # - Models
 from .models import Employee, Plot
+from schedule.forms import EventCreationForm
 from schedule.models import Event
 
 
@@ -237,6 +242,20 @@ class AddEmployeeTestCase(TestCase):
 class AddPlotTestCase(TestCase):
     """
     Testing plot adding to the database
+
+    Attributes:
+    -----------
+    :self.variety (string): Plot variety field;
+    :self.area (string): Plot area field;
+    :self.comment (string): Plot comment field;
+    :self.plowed (bool): Plot variety field;
+    :self.watered (bool): Plot variety field;
+    :self.sulphated (bool): Plot variety field;
+    :self.username (string): User's data;
+    :self.password(string): User's password;
+    :self.user (User): User that will try to use add view;
+    :self.init_plot_count (int): Initial plot number.
+
     """
 
     def setUp(self):
@@ -860,3 +879,281 @@ class DeleteObjectTestCase(TestCase):
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/management/")
         self.assertEqual(self.count_emp - 1, Employee.objects.count())
+
+class EditTestCase(TestCase):
+    """
+    Testing data editing by admin.
+
+    Attributes:
+    -----------
+    :self.plot (Plot): Plot to modify;
+    :self.employee (Employee): Employee to modify;
+    :self.user (Employee): User who will try to edit data;
+    self.username (string): User's username;
+    self.password (string): User's password;
+    :self.event (Event): Event to modify.
+    """
+
+    def setUp(self):
+        
+        # - Employee
+        self.employee = Employee.objects.create(
+            username="letissierh",
+            first_name="Heloise",
+            last_name="Letissier",
+            password="Christine&TheQu33ns",
+            email="nuit17@52.fr",
+            phone_number="0102030405",
+            address="Paradis Perdu",
+        )
+
+        # - User
+        self.username = "desplata"
+        self.password = "0Dark30"
+        self.user = Employee.objects.create_user(
+            username = self.username,
+            first_name = "Alexandre",
+            last_name  ="Desplat",
+            password = self.password,
+            email = "deathlyh@llows.fr",
+            phone_number = "0102030405",
+            address = "Isle of Dogs",
+            is_staff = False,
+        )
+
+        # - Plot
+        self.plot = Plot.objects.create(
+            variety = "Chardonnay",
+            area = "325 pieds",
+            comment = "-",
+            plowed = True,
+            watered = True,
+            sulphated = True,
+        )
+
+        # - Event
+        self.event = Event.objects.create(
+            employee = self.employee,
+            plot = self.plot,
+            day = "Lundi",
+            start = "18:00",
+            end = "20:00",
+            occupation = "Sarclage"
+        )
+
+    def test_access_edit_not_logged_in(self):
+        """
+        A non logged user try to access edit forms.
+
+        Condition:
+        ----------
+        *   User IS NOT logged in.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        """
+
+        self.client.logout()
+        request = self.client.get(
+            reverse("management:edit",
+            kwargs={"model": "employee", "id": self.employee.id},)
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/edit/employee/"
+            + str(self.employee.id)
+            + "/"
+        )
+
+    def test_save_edit_not_logged(self):
+        """
+        A non logged user try to change data.
+
+        Condition:
+        ----------
+        *   User IS NOT logged in.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   Employee still has original data.
+        """
+        self.client.logout()
+        request = self.client.post(
+            reverse("management:save",
+            kwargs={"model": "employee", "id": self.employee.id}),
+            {
+                'username' : self.username,
+                'first_name' : "John",
+                'last_name' : "Williams",
+                'password' : self.password,
+                'email' : self.employee.email,
+                'phone_number' : self.employee.phone_number,
+                'address' : "In a Galaxy Far Away",
+                'is_staff' : True, 
+            }
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/save/employee/"
+            + str(self.employee.id)
+            + "/"
+        )
+        self.assertFalse(self.employee.is_staff)
+        self.assertEqual(self.employee.first_name, "Heloise")
+        self.assertEqual(self.employee.last_name, "Letissier")
+        self.assertEqual(self.employee.address, "Paradis Perdu")
+
+    def test_access_edit_not_staff(self):
+        """
+        A non staff user try to access edit forms.
+
+        Condition:
+        ----------
+        *   User IS logged in AND NOT staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        """
+
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse("management:edit",
+            kwargs={"model": "plot", "id": self.plot.id},)
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/edit/plot/"
+            + str(self.plot.id)
+            + "/"
+        )
+
+    def test_save_edit_not_staff(self):
+        """
+        A non staff user try to change data.
+
+        Condition:
+        ----------
+        *   User IS logged in AND NOT staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   Plot still has original data.
+        """
+
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.post(
+            reverse("management:save",
+            kwargs={"model": "plot", "id": self.plot.id},),
+            {
+                'variety' : "Chardonnay",
+                'area' : "325 pieds",
+                'comment' : "-",
+                'plowed' : False,
+                'watered' : False,
+                'sulphated' : False,
+            }
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/save/plot/"
+            + str(self.plot.id)
+            + "/"
+        )
+        self.assertTrue(self.plot.watered)
+        self.assertTrue(self.plot.plowed)
+        self.assertTrue(self.plot.sulphated)
+
+    def test_access_edit_staff(self):
+        """
+        A staff user try to access edit forms.
+
+        Condition:
+        ----------
+        *   User IS logged in AND IS Staff.
+
+        Assertions:
+        -----------
+        *   Status code = 200 (ok);
+        *   Template used is edit.html;
+        *   The right edit form is loaded.
+        """
+        self.user.is_staff = True
+        self.user.save()
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse("management:edit",
+            kwargs={"model": "event", "id": self.event.id},)
+        )
+        self.assertEqual(request.status_code, 200)
+        self.assertTemplateUsed(request, "management/edit.html")
+        self.assertEqual(request.context['model'], 'event')
+        self.assertEqual(
+            type(request.context['form']), 
+            type(EventCreationForm())
+            )
+
+    def test_access_edit_staff(self):
+        """
+        A staff user try to change event data.
+
+        Condition:
+        ----------
+        *   User IS logged in AND IS Staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (Redirects);
+        *   Redirected to management page;
+        *   A confirmation message is displayed;
+        *   The event is correctly modified.
+        """
+        self.user.is_staff = True
+        self.user.save()
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.post(
+            reverse(
+                "management:save",
+                kwargs={"model": "event", "id": self.event.id}
+            ),
+            {
+                'employee' : self.employee.id,
+                'plot' : self.plot.id,
+                'day' : "Vendredi",
+                'start' : "8:00",
+                'end' : "12:00",
+                'occupation' : "Arrosage",
+            }
+        )
+        self.event.refresh_from_db()
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(request, "/management/")
+        self.assertEqual(self.client.session['message'],
+        'Evénement modifié avec succès')
+        self.assertEqual(self.event.day, 'Vendredi')
+        self.assertEqual(self.event.start, datetime.time(8, 0))
+        self.assertEqual(self.event.end, datetime.time(12, 0))
+

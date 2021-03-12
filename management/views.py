@@ -6,7 +6,7 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # - Custom models and forms
 from .models import Plot, Employee
@@ -143,6 +143,15 @@ def add_event(request):
 
 @staff_member_required
 def delete(request, model, id):
+    """
+    Delete function
+
+    Delete an employee, a plot or an event.
+
+    @staff_member_required
+
+    """
+
     if model == "employee":
         to_delete = Employee.objects.get(pk=id)
         to_delete.delete(keep_parents=False)
@@ -159,3 +168,103 @@ def delete(request, model, id):
         request.session["message"] = "L'événement a été effacé avec succès !"
 
     return redirect("management:management")
+
+@staff_member_required
+def edit(request, model, id):
+    """
+    Edit function
+
+    Generate edit form for an employee, a plot or an event.
+
+    @staff_member_required
+
+    """
+    if model == "employee":
+        employee = Employee.objects.get(pk=id)
+        context = {
+            'model': "employee",
+            'subject' : employee,
+            'form' : EmployeeCreationForm(
+                initial={
+                    'username' : employee.username,
+                    'first_name' : employee.first_name,
+                    'last_name' : employee.last_name,
+                    'password1' : employee.password,
+                    'password2' : employee.password,
+                    'email' : employee.email,
+                    'phone_number' : employee.phone_number,
+                    'address' : employee.address,
+                }
+            )
+        }
+    if model == "plot":
+        plot = Plot.objects.get(pk=id)
+        context = {
+            'model': "plot",
+            'subject' : plot,
+            'form' : PlotCreationForm(
+                initial={
+                    'variety' : plot.variety,
+                    'area' : plot.area,
+                    'comment' : plot.comment,
+                    'plowed' : plot.plowed,
+                    'watered' : plot.watered,
+                    'sulphated' : plot.sulphated,
+                }
+            )
+        }
+    if model == "event":
+        event = Event.objects.get(pk=id)
+        context = {
+            'model': "event",
+            'subject' : event,
+            'form' : EventCreationForm(
+                initial={
+                    'employee' : event.employee,
+                    'plot' : event.plot,
+                    'day' : event.day,
+                    'start' : event.start,
+                    'end' : event.end,
+                    'occupation' : event.occupation,
+                }
+            )
+        }
+    return render(request, "management/edit.html", context)
+
+@staff_member_required
+def save(request, model, id):
+    """
+    Save mdofications function
+
+    Save modifications made to an employee, a plot or an event.
+
+    @staff_member_required
+
+    """
+
+    if request.method == 'POST':
+        if model == "employee":
+            employee = get_object_or_404(Employee, pk=id)
+            form = PlotCreationForm(request.POST, instance=employee)
+            if form.is_valid():
+                form.save()
+                request.session["message"] = "Employé modifié avec succès"
+
+        if model == "plot":
+            plot = get_object_or_404(Plot, pk=id)
+            form = PlotCreationForm(request.POST, instance=plot)
+            if form.is_valid():
+                form.save()
+                request.session["message"] = "Parcelle modifiée avec succès"
+            
+
+        if model == "event":
+            event = get_object_or_404(Event, pk=id)
+            form = EventCreationForm(request.POST, instance=event)
+            if form.is_valid():
+                form.save()
+                request.session["message"] = "Evénement modifié avec succès"
+            else:
+                request.session["message"] = "Erreur"
+                print(form.errors)
+        return redirect('management:management')
