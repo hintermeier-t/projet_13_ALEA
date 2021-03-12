@@ -9,3 +9,6 @@ class Event(models.Model):
     start = models.TimeField()
     end = models.TimeField()
     occupation = models.CharField(max_length=100, null=False)
+
+    class Meta:
+        ordering = ["employee","day","start"]

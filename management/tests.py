@@ -38,7 +38,6 @@ class ManagementPageTestCase(TestCase):
         """
 
         self.client.login(username=self.username, password=self.password)
-        request = self.client.get(reverse("dashboard"))
         request = self.client.get(reverse("management:management"))
         self.assertEqual(request.status_code, 200)
 
@@ -60,7 +59,7 @@ class ManagementPageTestCase(TestCase):
         self.client.login(username=self.username, password=self.password)
         request = self.client.get(reverse("management:management"))
         self.assertEqual(request.status_code, 302)
-        self.assertRedirects(request, "/dashboard/")
+        self.assertRedirects(request, "/backoffice/login/?next=/management/")
 
     def test_management_anonymous(self):
         """
@@ -78,7 +77,7 @@ class ManagementPageTestCase(TestCase):
         self.client.logout()
         request = self.client.get(reverse("management:management"))
         self.assertEqual(request.status_code, 302)
-        self.assertRedirects(request, "/authentication/login/?next=/management/")
+        self.assertRedirects(request, "/backoffice/login/?next=/management/")
 
 
 class AddEmployeeTestCase(TestCase):
@@ -135,7 +134,7 @@ class AddEmployeeTestCase(TestCase):
         self.assertEquals(self.init_user_count, User.objects.count())
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
-            request, "/authentication/login/?next=/management/add_employee"
+            request, "/backoffice/login/?next=/management/add_employee"
         )
 
     def test_add_employee_not_staff(self):
@@ -165,7 +164,10 @@ class AddEmployeeTestCase(TestCase):
                 "password2": self.password,
             },
         )
-        self.assertEquals(request.status_code, 403)
+        self.assertEquals(request.status_code, 302)
+        self.assertRedirects(
+            request, "/backoffice/login/?next=/management/add_employee"
+        )
         self.assertEquals(self.init_emp_count, Employee.objects.count())
         self.assertEquals(self.init_user_count, User.objects.count())
 
@@ -285,7 +287,7 @@ class AddPlotTestCase(TestCase):
         self.assertEquals(self.init_plot_count, Plot.objects.count())
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
-            request, "/authentication/login/?next=/management/add_plot"
+            request, "/backoffice/login/?next=/management/add_plot"
         )
 
     def test_add_plot_not_staff(self):
@@ -313,7 +315,10 @@ class AddPlotTestCase(TestCase):
                 "sulphated": self.sulphated,
             },
         )
-        self.assertEquals(request.status_code, 403)
+        self.assertEquals(request.status_code, 302)
+        self.assertRedirects(
+            request, "/backoffice/login/?next=/management/add_plot"
+        )
         self.assertEquals(self.init_plot_count, Plot.objects.count())
 
     def test_add_plot_staff(self):
@@ -387,7 +392,7 @@ class AddEventTestCase(TestCase):
             username=self.username, password=self.password, is_staff=False
         )
         # - Employee
-        self.employee = Employee.objects.create(
+        self.employee = Employee.objects.create_user(
             username="bulsaraf",
             first_name="Farrokh",
             last_name="Bulsara",
@@ -447,7 +452,7 @@ class AddEventTestCase(TestCase):
         self.assertEquals(self.init_event_count, Event.objects.count())
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
-            request, "/authentication/login/?next=/management/add_event"
+            request, "/backoffice/login/?next=/management/add_event"
         )
 
     def test_add_event_not_staff(self):
@@ -475,7 +480,10 @@ class AddEventTestCase(TestCase):
                 "occupation": self.occupation,
             },
         )
-        self.assertEquals(request.status_code, 403)
+        self.assertEquals(request.status_code, 302)
+        self.assertRedirects(
+            request, "/backoffice/login/?next=/management/add_event"
+        )
         self.assertEquals(self.init_event_count, Event.objects.count())
 
     def test_add_event_staff(self):
@@ -511,7 +519,7 @@ class AddEventTestCase(TestCase):
 
     def test_add_event_error(self):
         """
-        An staff user try to add an Event with a mistake in form
+        A staff user try to add an Event with a mistake in form
 
         Condition:
         -----------
@@ -533,3 +541,418 @@ class AddEventTestCase(TestCase):
             },
         )
         self.assertEquals(self.init_event_count, Event.objects.count())
+
+class DeleteObjectTestCase(TestCase):
+    """
+    Delete view tests. The view can delete either an employee, a plot or
+    an event.
+    """
+
+    def setUp(self):
+        # - The employee to delete
+        self.employee = Employee.objects.create_user(
+            username="saarestom",
+            first_name="Marko",
+            last_name="Saaresto",
+            password="Carnival0fRust",
+            email="poetsofthe@fall.com",
+            phone_number="0102030405",
+            address="Cauldron Lake lodge",
+        )
+
+        # - The user
+        self.username = "bellamym"
+        self.password = "R3sistance"
+        self.user = Employee.objects.create_user(
+            username = self.username,
+            first_name = self.password,
+            last_name = "Bellamy",
+            password = "R3sistance",
+            email = "simulation@theory.uk",
+            phone_number = "0102030405",
+            address = "Supermassive Black Hole",
+            is_staff = False
+        )
+
+        # - The plot to delete
+        self.plot = Plot.objects.create(
+            variety = "Muscat",
+            area = "12 hectares",
+            comment = "A gelé",
+            plowed = True,
+            watered = True,
+            sulphated = True,
+        )
+
+        # - The event to delete
+        self.event = Event.objects.create(
+            employee = self.employee,
+            plot = self.plot,
+            day = "Vendredi",
+            start = "10:00",
+            end = "12:00",
+            occupation = "Goûter le vin"
+        )
+        # - Count data
+        self.count_emp = Employee.objects.count()
+        self.count_plot = Plot.objects.count()
+        self.count_event = Event.objects.count()
+
+    def test_delete_employee_not_logged_in(self):
+        """
+        A non logged user try to delete an employee
+
+        Condition:
+        ----------
+        *   User IS NOT logged in.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   No employee deleted.
+
+        """
+
+        self.client.logout()
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'employee',
+                    'id' : self.employee.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/delete/employee/"
+                + str(self.employee.id)
+                + "/"
+        )
+        self.assertEqual(
+            self.count_emp,
+            Employee.objects.count()
+        )
+
+    def test_delete_plot_not_logged_in(self):
+        """
+        A non logged user try to delete a plot.
+
+        Condition:
+        ----------
+        *   User IS NOT logged in.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   No plot deleted.
+
+        """
+
+        self.client.logout()
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'plot',
+                    'id' : self.plot.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/delete/plot/"
+                + str(self.plot.id)
+                + "/"
+        )
+        self.assertEqual(
+            self.count_plot,
+            Plot.objects.count()
+        )
+
+    def test_delete_event_not_logged_in(self):
+        """
+        A non logged user try to delete an event.
+
+        Condition:
+        ----------
+        *   User IS NOT logged in.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   No event deleted.
+
+        """
+
+        self.client.logout()
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'event',
+                    'id' : self.event.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/delete/event/"
+                + str(self.event.id)
+                + "/"
+        )
+        self.assertEqual(
+            self.count_event,
+            Event.objects.count()
+        )
+
+    def test_delete_emp_not_staff(self):
+        """
+        A non staff user try to delete an employee.
+
+        Condition:
+        ----------
+        *   User IS logged in AND NOT staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   No employee deleted.
+
+        """
+
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'employee',
+                    'id' : self.employee.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/delete/employee/"
+                + str(self.employee.id)
+                + "/"
+        )
+        self.assertEqual(
+            self.count_emp,
+            Employee.objects.count()
+        )
+
+    def test_delete_plot_not_staff(self):
+        """
+        A non staff user try to delete a plot.
+
+        Condition:
+        ----------
+        *   User IS logged in AND NOT staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   No plot deleted.
+
+        """
+
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'plot',
+                    'id' : self.plot.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/delete/plot/"
+                + str(self.plot.id)
+                + "/"
+        )
+        self.assertEqual(
+            self.count_plot,
+            Plot.objects.count()
+        )
+
+    def test_delete_event_not_staff(self):
+        """
+        A non staff user try to delete an event.
+
+        Condition:
+        ----------
+        *   User IS logged in AND NOT staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to staff login page;
+        *   No event deleted.
+
+        """
+
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'event',
+                    'id' : self.event.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(
+            request,
+            "/backoffice/login/?next=/management/delete/event/"
+                + str(self.event.id)
+                + "/"
+        )
+        self.assertEqual(
+            self.count_event,
+            Event.objects.count()
+        )
+
+
+    def test_delete_event_staff(self):
+        """
+        A staff user try to delete an event.
+
+        Condition:
+        ----------
+        *   User IS logged in AND IS staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to management;
+        *   One event deleted.
+
+        """
+
+        self.user.is_staff = True
+        self.user.save()
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'event',
+                    'id' : self.event.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(request, "/management/")
+        self.assertEqual(
+            self.count_event - 1,
+            Event.objects.count()
+        )
+
+    def test_delete_plot_staff(self):
+        """
+        A staff user try to delete a plot.
+
+        Condition:
+        ----------
+        *   User IS logged in AND IS staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to management;
+        *   One plot deleted.
+
+        """
+        self.user.is_staff = True
+        self.user.save()
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'plot',
+                    'id' : self.plot.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(request, "/management/")
+        self.assertEqual(
+            self.count_plot - 1,
+            Plot.objects.count()
+        )
+
+    def test_delete_emp_staff(self):
+        """
+        A staff user try to delete an employee.
+
+        Condition:
+        ----------
+        *   User IS logged in AND IS staff.
+
+        Assertions:
+        -----------
+        *   Status code = 302 (redirects);
+        *   User is redirected to management;
+        *   One employee deleted.
+
+        """
+        self.user.is_staff = True
+        self.user.save()
+        self.client.login(
+            username = self.username,
+            password = self.password
+        )
+        request = self.client.get(
+            reverse(
+                "management:delete",
+                kwargs = {
+                    'model' : 'employee',
+                    'id' : self.employee.id}
+            )
+            
+
+        )
+        self.assertEqual(request.status_code, 302)
+        self.assertRedirects(request, "/management/")
+        self.assertEqual(
+            self.count_emp - 1,
+            Employee.objects.count()
+        )
