@@ -287,8 +287,7 @@ class AddPlotTestCase(TestCase):
         self.assertEquals(self.init_plot_count, Plot.objects.count())
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
-            request, "/backoffice/login/?next=/management/add_plot"
-        )
+            request, "/backoffice/login/?next=/management/add_plot")
 
     def test_add_plot_not_staff(self):
         """
@@ -317,8 +316,7 @@ class AddPlotTestCase(TestCase):
         )
         self.assertEquals(request.status_code, 302)
         self.assertRedirects(
-            request, "/backoffice/login/?next=/management/add_plot"
-        )
+            request, "/backoffice/login/?next=/management/add_plot")
         self.assertEquals(self.init_plot_count, Plot.objects.count())
 
     def test_add_plot_staff(self):
@@ -452,8 +450,7 @@ class AddEventTestCase(TestCase):
         self.assertEquals(self.init_event_count, Event.objects.count())
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
-            request, "/backoffice/login/?next=/management/add_event"
-        )
+            request, "/backoffice/login/?next=/management/add_event")
 
     def test_add_event_not_staff(self):
         """
@@ -482,8 +479,7 @@ class AddEventTestCase(TestCase):
         )
         self.assertEquals(request.status_code, 302)
         self.assertRedirects(
-            request, "/backoffice/login/?next=/management/add_event"
-        )
+            request, "/backoffice/login/?next=/management/add_event")
         self.assertEquals(self.init_event_count, Event.objects.count())
 
     def test_add_event_staff(self):
@@ -542,6 +538,7 @@ class AddEventTestCase(TestCase):
         )
         self.assertEquals(self.init_event_count, Event.objects.count())
 
+
 class DeleteObjectTestCase(TestCase):
     """
     Delete view tests. The view can delete either an employee, a plot or
@@ -564,34 +561,34 @@ class DeleteObjectTestCase(TestCase):
         self.username = "bellamym"
         self.password = "R3sistance"
         self.user = Employee.objects.create_user(
-            username = self.username,
-            first_name = self.password,
-            last_name = "Bellamy",
-            password = "R3sistance",
-            email = "simulation@theory.uk",
-            phone_number = "0102030405",
-            address = "Supermassive Black Hole",
-            is_staff = False
+            username=self.username,
+            first_name="Matthew",
+            last_name="Bellamy",
+            password=self.password,
+            email="simulation@theory.uk",
+            phone_number="0102030405",
+            address="Supermassive Black Hole",
+            is_staff=False,
         )
 
         # - The plot to delete
         self.plot = Plot.objects.create(
-            variety = "Muscat",
-            area = "12 hectares",
-            comment = "A gelé",
-            plowed = True,
-            watered = True,
-            sulphated = True,
+            variety="Muscat",
+            area="12 hectares",
+            comment="A gelé",
+            plowed=True,
+            watered=True,
+            sulphated=True,
         )
 
         # - The event to delete
         self.event = Event.objects.create(
-            employee = self.employee,
-            plot = self.plot,
-            day = "Vendredi",
-            start = "10:00",
-            end = "12:00",
-            occupation = "Goûter le vin"
+            employee=self.employee,
+            plot=self.plot,
+            day="Vendredi",
+            start="10:00",
+            end="12:00",
+            occupation="Goûter le vin",
         )
         # - Count data
         self.count_emp = Employee.objects.count()
@@ -618,24 +615,17 @@ class DeleteObjectTestCase(TestCase):
         request = self.client.get(
             reverse(
                 "management:delete",
-                kwargs = {
-                    'model' : 'employee',
-                    'id' : self.employee.id}
+                kwargs={"model": "employee", "id": self.employee.id},
             )
-            
-
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
             request,
             "/backoffice/login/?next=/management/delete/employee/"
-                + str(self.employee.id)
-                + "/"
+            + str(self.employee.id)
+            + "/",
         )
-        self.assertEqual(
-            self.count_emp,
-            Employee.objects.count()
-        )
+        self.assertEqual(self.count_emp, Employee.objects.count())
 
     def test_delete_plot_not_logged_in(self):
         """
@@ -655,26 +645,17 @@ class DeleteObjectTestCase(TestCase):
 
         self.client.logout()
         request = self.client.get(
-            reverse(
-                "management:delete",
-                kwargs = {
-                    'model' : 'plot',
-                    'id' : self.plot.id}
-            )
-            
-
+            reverse("management:delete", kwargs={
+                    "model": "plot", "id": self.plot.id})
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
             request,
             "/backoffice/login/?next=/management/delete/plot/"
-                + str(self.plot.id)
-                + "/"
+            + str(self.plot.id)
+            + "/",
         )
-        self.assertEqual(
-            self.count_plot,
-            Plot.objects.count()
-        )
+        self.assertEqual(self.count_plot, Plot.objects.count())
 
     def test_delete_event_not_logged_in(self):
         """
@@ -694,26 +675,17 @@ class DeleteObjectTestCase(TestCase):
 
         self.client.logout()
         request = self.client.get(
-            reverse(
-                "management:delete",
-                kwargs = {
-                    'model' : 'event',
-                    'id' : self.event.id}
-            )
-            
-
+            reverse("management:delete", kwargs={
+                    "model": "event", "id": self.event.id})
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
             request,
             "/backoffice/login/?next=/management/delete/event/"
-                + str(self.event.id)
-                + "/"
+            + str(self.event.id)
+            + "/",
         )
-        self.assertEqual(
-            self.count_event,
-            Event.objects.count()
-        )
+        self.assertEqual(self.count_event, Event.objects.count())
 
     def test_delete_emp_not_staff(self):
         """
@@ -731,31 +703,21 @@ class DeleteObjectTestCase(TestCase):
 
         """
 
-        self.client.login(
-            username = self.username,
-            password = self.password
-        )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.get(
             reverse(
                 "management:delete",
-                kwargs = {
-                    'model' : 'employee',
-                    'id' : self.employee.id}
+                kwargs={"model": "employee", "id": self.employee.id},
             )
-            
-
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
             request,
             "/backoffice/login/?next=/management/delete/employee/"
-                + str(self.employee.id)
-                + "/"
+            + str(self.employee.id)
+            + "/",
         )
-        self.assertEqual(
-            self.count_emp,
-            Employee.objects.count()
-        )
+        self.assertEqual(self.count_emp, Employee.objects.count())
 
     def test_delete_plot_not_staff(self):
         """
@@ -773,31 +735,19 @@ class DeleteObjectTestCase(TestCase):
 
         """
 
-        self.client.login(
-            username = self.username,
-            password = self.password
-        )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.get(
-            reverse(
-                "management:delete",
-                kwargs = {
-                    'model' : 'plot',
-                    'id' : self.plot.id}
-            )
-            
-
+            reverse("management:delete", kwargs={
+                    "model": "plot", "id": self.plot.id})
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
             request,
             "/backoffice/login/?next=/management/delete/plot/"
-                + str(self.plot.id)
-                + "/"
+            + str(self.plot.id)
+            + "/",
         )
-        self.assertEqual(
-            self.count_plot,
-            Plot.objects.count()
-        )
+        self.assertEqual(self.count_plot, Plot.objects.count())
 
     def test_delete_event_not_staff(self):
         """
@@ -815,32 +765,19 @@ class DeleteObjectTestCase(TestCase):
 
         """
 
-        self.client.login(
-            username = self.username,
-            password = self.password
-        )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.get(
-            reverse(
-                "management:delete",
-                kwargs = {
-                    'model' : 'event',
-                    'id' : self.event.id}
-            )
-            
-
+            reverse("management:delete", kwargs={
+                    "model": "event", "id": self.event.id})
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(
             request,
             "/backoffice/login/?next=/management/delete/event/"
-                + str(self.event.id)
-                + "/"
+            + str(self.event.id)
+            + "/",
         )
-        self.assertEqual(
-            self.count_event,
-            Event.objects.count()
-        )
-
+        self.assertEqual(self.count_event, Event.objects.count())
 
     def test_delete_event_staff(self):
         """
@@ -860,26 +797,14 @@ class DeleteObjectTestCase(TestCase):
 
         self.user.is_staff = True
         self.user.save()
-        self.client.login(
-            username = self.username,
-            password = self.password
-        )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.get(
-            reverse(
-                "management:delete",
-                kwargs = {
-                    'model' : 'event',
-                    'id' : self.event.id}
-            )
-            
-
+            reverse("management:delete", kwargs={
+                    "model": "event", "id": self.event.id})
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/management/")
-        self.assertEqual(
-            self.count_event - 1,
-            Event.objects.count()
-        )
+        self.assertEqual(self.count_event - 1, Event.objects.count())
 
     def test_delete_plot_staff(self):
         """
@@ -898,26 +823,14 @@ class DeleteObjectTestCase(TestCase):
         """
         self.user.is_staff = True
         self.user.save()
-        self.client.login(
-            username = self.username,
-            password = self.password
-        )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.get(
-            reverse(
-                "management:delete",
-                kwargs = {
-                    'model' : 'plot',
-                    'id' : self.plot.id}
-            )
-            
-
+            reverse("management:delete", kwargs={
+                    "model": "plot", "id": self.plot.id})
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/management/")
-        self.assertEqual(
-            self.count_plot - 1,
-            Plot.objects.count()
-        )
+        self.assertEqual(self.count_plot - 1, Plot.objects.count())
 
     def test_delete_emp_staff(self):
         """
@@ -934,25 +847,16 @@ class DeleteObjectTestCase(TestCase):
         *   One employee deleted.
 
         """
+
         self.user.is_staff = True
         self.user.save()
-        self.client.login(
-            username = self.username,
-            password = self.password
-        )
+        self.client.login(username=self.username, password=self.password)
         request = self.client.get(
             reverse(
                 "management:delete",
-                kwargs = {
-                    'model' : 'employee',
-                    'id' : self.employee.id}
+                kwargs={"model": "employee", "id": self.employee.id},
             )
-            
-
         )
         self.assertEqual(request.status_code, 302)
         self.assertRedirects(request, "/management/")
-        self.assertEqual(
-            self.count_emp - 1,
-            Employee.objects.count()
-        )
+        self.assertEqual(self.count_emp - 1, Employee.objects.count())

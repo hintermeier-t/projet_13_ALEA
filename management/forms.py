@@ -11,7 +11,8 @@ class PlotCreationForm(ModelForm):
     class Meta:
 
         model = Plot
-        fields = ["variety", "area", "comment", "plowed", "watered", "sulphated"]
+        fields = ["variety", "area", "comment",
+                  "plowed", "watered", "sulphated"]
 
 
 class EmployeeCreationForm(UserCreationForm):

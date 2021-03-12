@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 
+
 class Plot(models.Model):
     variety = models.CharField("Variété", max_length=50, null=False)
     area = models.CharField("Etendue", max_length=20, null=False)

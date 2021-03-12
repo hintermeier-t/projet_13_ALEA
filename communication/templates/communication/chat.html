@@ -5,17 +5,28 @@
 <div class='container col-sm-12 col-md-4' style="padding-top: 120px; height:100vh;">
     <h1>Messagerie interne</h1>
     <div class="clear"></div>
+    {% if request.session.message is not None %}
+        <div class="container" style="color:red;">
+            {{ request.session.message }}
+        </div>
+    {% endif %}
     <table id="chatbox" style="border: 1px solid #333333; width: 100%;">
         {% for message in messages %}
         <tr style="background:#4a772b; color:white;">
             <td style="font-weight: bold;">{{message.employee.username}} :</td>
             <td>{{message.content}}</td>
+            {% if user.is_staff %}
+            <td rowspan=2 style="text-align: center;background-color: white; color:red"><a href="{% url 'communication:delete' message.id %}"><i class="fa fa-trash-o"></i></a></td>
+            {% endif %}
         </tr>
         <tr style="background:#72b842;color:black;">
             <td colspan="2" style="font-size: x-small;">{{message.date}}</td>
         </tr>
+        {% empty %}
+        <tr><td style="font-size: xx-large;">Aucun message à afficher !</td></tr>
         {% endfor %}
     </table>
+    <br>
     <form class="form-inline" action="{% url 'communication:chat' %}" method="POST">
         {% csrf_token %}
         <p><label for="content">Votre Message:</label>
