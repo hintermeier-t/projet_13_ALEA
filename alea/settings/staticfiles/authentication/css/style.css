@@ -1,0 +1,36 @@
+td a{
+        display:block;
+        text-decoration:none;
+        color:#333333;
+}
+
+.onglet{
+        display:inline-block;
+        margin-left:3px;
+        margin-right:3px;
+        padding:3px;
+        border:1px solid black;
+        cursor:pointer;
+        }
+.onglet_0{
+        background:#4a772b;
+        border-bottom:1px solid white;
+        color: white;
+}
+.onglet_1{
+        background:#72b842;
+        border-bottom:0px solid white;
+        padding-bottom:4px;
+        color: black;
+}
+.contenu_onglet{
+        background-color:white;
+        border:1px solid #72b842;
+        margin-top:-1px;
+        padding:5px;
+        display:none;
+}
+.titre_onglet{
+        margin:0px;
+        padding:0px;
+}

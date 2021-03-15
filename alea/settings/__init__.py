@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -97,7 +97,7 @@ DATABASES = {
         # on utilise l'adaptateur postgresql
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "alea",  # le nom de notre base de donnees creee precedemment
-        "USER": "postgres",  # attention : remplacez par votre nom d'utilisateur
+        "USER": "thomadmin",  # attention : remplacez par votre nom d'utilisateur
         "PASSWORD": "2s7gix9u",
         "HOST": "",
         "PORT": "5433",
@@ -149,9 +149,8 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, "staticfiles")
-STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, "static"),)
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 LOGOUT_REDIRECT_URL = "index"
 LOGIN_URL = "authentication:login"
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
