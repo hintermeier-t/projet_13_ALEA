@@ -24,4 +24,5 @@ class EmployeeCreationForm(UserCreationForm):
             "email",
             "phone_number",
             "address",
+            "is_staff"
         )

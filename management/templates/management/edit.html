@@ -1,0 +1,16 @@
+{% extends 'authentication/base.html' %}
+
+{% block content %}
+<div class="container" style="padding-top: 120px;height:100hv;">
+<h1>Modification de {{subject}}</h1>
+<div class="clear"></div>
+<form class="form-inline" action="{% url 'management:save' model subject.id %}" method="POST">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button name="submit" type="submit" class="btn btn-success">Sauvegarder</button>
+    </form>
+    <br>
+    <a href="{%url 'management:management' %}"><button name="cancel" class="btn btn-warning">Annuler</button></a>
+
+</div>
+{% endblock %}

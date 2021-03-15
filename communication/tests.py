@@ -283,6 +283,6 @@ class DeleteMessageTestCase(TestCase):
         self.assertRedirects(request, "/communication/")
         self.assertEqual(self.count - 1, Message.objects.count())
         self.assertEqual(
-            Message.objects.all()[
-                0].content, "In rock we trust, it's rock or bust"
+            Message.objects.all()[0].content,
+            "In rock we trust, it's rock or bust"
         )
